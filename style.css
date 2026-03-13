@@ -1,0 +1,89 @@
+body{
+background:#0b0b0c;
+color:white;
+font-family:Inter, sans-serif;
+margin:0;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+align-items:center;
+}
+
+nav a{
+color:#bbb;
+margin-left:20px;
+text-decoration:none;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:100px 80px;
+}
+
+.hero-left{
+max-width:520px;
+}
+
+.badge{
+background:#1a1a1c;
+padding:6px 12px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:20px;
+font-size:14px;
+}
+
+h1{
+font-size:64px;
+line-height:1.1;
+margin:0;
+}
+
+h1 span{
+color:#a78bfa;
+}
+
+.subtitle{
+margin-top:20px;
+color:#aaa;
+font-size:18px;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+.btn{
+padding:12px 20px;
+border-radius:10px;
+border:1px solid #333;
+margin-right:10px;
+text-decoration:none;
+color:white;
+}
+
+.btn.primary{
+background:#a78bfa;
+color:black;
+border:none;
+}
+
+.hero-right{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.code-card{
+background:#111;
+padding:30px;
+border-radius:16px;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
+font-family:monospace;
+color:#9cdcfe;
+}
