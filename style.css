@@ -1,6 +1,97 @@
 body{
 background:#0b0b0c;
 color:white;
+font-family:Inter;
+margin:0;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+padding:25px 60px;
+}
+
+nav a{
+margin-left:20px;
+color:#aaa;
+text-decoration:none;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 80px;
+}
+
+.hero-left{
+max-width:500px;
+}
+
+.badge{
+background:#1a1a1c;
+padding:6px 14px;
+border-radius:20px;
+display:inline-block;
+}
+
+h1{
+font-size:64px;
+line-height:1.1;
+}
+
+h1 span{
+color:#a78bfa;
+}
+
+.subtitle{
+color:#bbb;
+margin-top:15px;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+.btn{
+padding:12px 22px;
+border-radius:10px;
+border:1px solid #333;
+text-decoration:none;
+color:white;
+margin-right:10px;
+}
+
+.btn.primary{
+background:#a78bfa;
+color:black;
+border:none;
+}
+
+.code-card{
+background:#111;
+padding:30px;
+border-radius:16px;
+font-family:monospace;
+}
+
+section{
+padding:100px 80px;
+}
+
+.app-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.app-card{
+background:#121214;
+padding:25px;
+border-radius:12px;
+}body{
+background:#0b0b0c;
+color:white;
 font-family:Inter, sans-serif;
 margin:0;
 }
