@@ -1,129 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Solder3t Apps</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solder3t builds practical Android apps and tools. Find app links, support, and privacy policy.">
+  <title>Solder3t | Android Apps & Support</title>
 
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
 
-<header>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Solder3t Home">
+      <span class="brand-mark">S3</span>
+      <span class="brand-text">Solder3t</span>
+    </a>
 
-<div class="logo">
-👻 Solder3t
-</div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#apps">Apps</a>
+      <a href="#projects">Projects</a>
+      <a href="pages/support.html">Support</a>
+      <a href="pages/privacy.html">Privacy</a>
+    </nav>
+  </header>
 
-<nav>
-<a href="#apps">Apps</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-<a href="pages/privacy.html">Privacy</a>
-</nav>
+  <main id="top">
+    <section class="hero reveal">
+      <p class="kicker">Independent Android Developer</p>
+      <h1>Clean Android apps that people actually keep using.</h1>
+      <p class="hero-text">
+        I design and ship Kotlin-first Android apps with fast UX, reliable performance,
+        and clear privacy practices. This page is the official home for all Solder3t apps.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#apps">Explore Apps</a>
+        <a class="btn btn-ghost" href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="hero-metrics" aria-label="Developer highlights">
+        <article>
+          <h2>2026</h2>
+          <p>Active roadmap</p>
+        </article>
+        <article>
+          <h2>Android</h2>
+          <p>Kotlin-focused stack</p>
+        </article>
+        <article>
+          <h2>Privacy</h2>
+          <p>Public policy and support pages</p>
+        </article>
+      </div>
+    </section>
 
-</header>
+    <section id="apps" class="section reveal">
+      <div class="section-head">
+        <p class="kicker">Published Work</p>
+        <h2>Apps</h2>
+      </div>
+      <div class="app-grid" id="app-grid"></div>
+      <p class="note">
+        Replace each app's Play Store URL in <code>script.js</code> once listing pages are live.
+      </p>
+    </section>
 
-<section class="hero">
+    <section id="projects" class="section reveal">
+      <div class="section-head">
+        <p class="kicker">Open Source</p>
+        <h2>Recent GitHub Projects</h2>
+      </div>
+      <div id="github-projects" class="project-grid" aria-live="polite"></div>
+    </section>
 
-<div class="hero-left">
+    <section id="support" class="section reveal support">
+      <div class="section-head">
+        <p class="kicker">Need Help?</p>
+        <h2>App Support</h2>
+      </div>
+      <div class="support-cards">
+        <article>
+          <h3>Support Email</h3>
+          <p>For bugs, billing, or feature requests:</p>
+          <a href="mailto:sold3vs@email.com">sold3vs@email.com</a>
+        </article>
+        <article>
+          <h3>Policy Links</h3>
+          <p>Use these URLs in Google Play Console:</p>
+          <p class="policy-url">
+            Privacy Policy URL:
+            <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a>
+          </p>
+          <p class="policy-url">
+            Support URL:
+            <a href="https://solder3t.github.io/pages/support.html">https://solder3t.github.io/pages/support.html</a>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-<p class="badge">Android Developer</p>
+  <footer class="site-footer">
+    <p>(c) <span id="year"></span> Solder3t. All rights reserved.</p>
+    <div>
+      <a href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="pages/privacy.html">Privacy Policy</a>
+      <a href="pages/support.html">Support</a>
+    </div>
+  </footer>
 
-<h1>
-Android apps crafted<br>
-<span>with Love❤️</span>
-</h1>
-
-<p class="subtitle">
-Independent developer creating Android apps and open-source tools.
-</p>
-
-<div class="buttons">
-
-<a class="btn primary" href="#apps">
-View Apps
-</a>
-
-<a class="btn" href="https://github.com/solder3t">
-GitHub
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="code-card">
-
-<pre>
-project = "Tunes Media Player"
-language = "Kotlin"
-
-features = [
-  "offline playback",
-  "fast UI",
-  "lightweight"
-]
-</pre>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="apps">
-
-<h2>Android Apps</h2>
-
-<div class="app-grid">
-
-<div class="app-card">
-
-<h3>Tunes Media Player</h3>
-<p>
-A seamless, beautiful offline media player for audiophiles.
-</p>
-  
-<a class="btn primary">
-Play Store
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="projects">
-
-<h2>Open Source Projects</h2>
-
-<div id="github-projects"></div>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<p>Email: sold3vs@email.com</p>
-
-<p>
-GitHub:  
-<a href="https://github.com/solder3t">
-github.com/solder3t
-</a>
-</p>
-
-</section>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
