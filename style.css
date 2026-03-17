@@ -183,6 +183,13 @@ h1 {
   background: #fff;
 }
 
+.btn-disabled {
+  background: #e8e2d8;
+  color: #71624a;
+  border-color: #d9ccba;
+  cursor: not-allowed;
+}
+
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -2,14 +2,10 @@ const apps = [
   {
     name: "Tunes Media Player",
     category: "Music & Audio",
-    description: "Offline-focused audio player with clean queue controls and fast browsing.",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.example.tunes"
-  },
-  {
-    name: "Solder Notes",
-    category: "Productivity",
-    description: "Lightweight notes app designed for speed and no-sign-in simplicity.",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.example.soldernotes"
+    description: "High-fidelity offline player for local music playback with optional online lyrics lookup.",
+    appId: "com.tunes.mp",
+    playStoreUrl: "",
+    status: "Built and testing. Play Store listing coming soon."
   }
 ];
 
@@ -20,11 +16,17 @@ function renderApps() {
   apps.forEach((app) => {
     const card = document.createElement("article");
     card.className = "app-card";
+    const cta = app.playStoreUrl
+      ? `<a class="btn btn-primary" href="${app.playStoreUrl}" target="_blank" rel="noreferrer">Play Store</a>`
+      : `<span class="btn btn-disabled" aria-disabled="true">Play Store Soon</span>`;
+
     card.innerHTML = `
       <p class="meta">${app.category}</p>
       <h3>${app.name}</h3>
       <p>${app.description}</p>
-      <a class="btn btn-primary" href="${app.playStoreUrl}" target="_blank" rel="noreferrer">Play Store</a>
+      <p class="meta">Package: ${app.appId}</p>
+      <p class="note">${app.status}</p>
+      ${cta}
     `;
     grid.appendChild(card);
   });
