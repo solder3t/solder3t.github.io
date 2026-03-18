@@ -1,9 +1,9 @@
 const apps = [
   {
-    name: "Tunes Media Player",
+    name: "Musaic Player",
     category: "Music & Audio",
     description: "High-fidelity offline player for local music playback with optional online lyrics lookup.",
-    appId: "com.tunes.mp",
+    appId: "com.musaic.mp",
     playStoreUrl: "",
     status: "Built and testing. Play Store listing coming soon."
   }
