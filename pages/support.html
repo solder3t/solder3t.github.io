@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Support page for Solder3t Android apps.">
-  <title>Support | Solder3t</title>
+  <meta name="description" content="Support page for Musaic Player — help, bug reports, and feature requests.">
+  <title>Support — Musaic Player | Solder3t</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 1.5rem;
+      padding: 1.5rem 2rem;
     }
 
     h1, h2 {
@@ -44,9 +44,8 @@
       line-height: 1.2;
     }
 
-    h2 {
-      margin-top: 1.6rem;
-    }
+    h1 { margin-top: 0.5rem; }
+    h2 { margin-top: 1.6rem; }
 
     p, li {
       color: var(--muted);
@@ -62,36 +61,75 @@
       margin-bottom: 1rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.3rem; }
+
+    code {
+      background: #eee8dd;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 1.2rem; }
     }
   </style>
 </head>
 <body>
   <main>
-    <a class="toplink" href="../index.html"><- Back to Home</a>
+    <a class="toplink" href="../index.html">&larr; Back to Home</a>
     <h1>Support</h1>
-    <p>Last updated: March 17, 2026</p>
+    <p>Last updated: March 19, 2026</p>
     <p>Public URL: <a href="https://solder3t.github.io/pages/support.html">https://solder3t.github.io/pages/support.html</a></p>
 
     <p>
-      This is the official support page for Tunes Media Player (<code>com.tunes.mp</code>).
-      If you need help, send issue details to the support email below.
+      This is the official support page for <strong>Musaic Player</strong> (<code>com.musaic.mp</code>),
+      developed by Solder3t. If you encounter a bug, crash, or unexpected behavior, please reach
+      out using the contact information below.
     </p>
 
     <h2>Contact</h2>
     <p>Email: <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a></p>
+    <p>
+      We aim to respond within 48 hours on business days. For faster resolution, please include
+      the details listed below.
+    </p>
 
-    <h2>Please Include</h2>
+    <h2>When Reporting a Bug, Please Include</h2>
     <ul>
-      <li>App name and version</li>
-      <li>Android device model and OS version</li>
-      <li>Clear steps to reproduce the issue</li>
-      <li>Screenshots if possible</li>
+      <li><strong>App version</strong> — visible in <em>Settings → About Musaic Player</em></li>
+      <li><strong>Device model</strong> (e.g., Pixel 8 Pro, Samsung Galaxy S24)</li>
+      <li><strong>Android version</strong> (e.g., Android 15)</li>
+      <li><strong>Steps to reproduce</strong> the issue</li>
+      <li><strong>Screenshots or screen recordings</strong> if applicable</li>
     </ul>
+
+    <h2>Feature Requests</h2>
+    <p>
+      Have an idea for a feature? We'd love to hear it! Use the same email address above and
+      prefix your subject line with <strong>[Feature Request]</strong>.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h2 style="font-size:1rem; margin-top:1rem;">Why can't Musaic find my music files?</h2>
+    <p>
+      Make sure you've granted the <strong>Audio permission</strong> during onboarding or in
+      <em>Settings → Permissions</em>. If you selected a specific scan folder, ensure your
+      music files are inside that folder.
+    </p>
+
+    <h2 style="font-size:1rem; margin-top:1rem;">How do I enable Online Lyrics?</h2>
+    <p>
+      Go to <em>Settings → Behavior → Online Lyrics</em> and toggle it on. This sends the
+      current song's title, artist, and duration to lyric services. See our
+      <a href="privacy.html">Privacy Policy</a> for details.
+    </p>
 
     <h2>Useful Links</h2>
     <p><a href="privacy.html">Privacy Policy</a></p>
+    <p><a href="terms.html">Terms of Service</a></p>
     <p><a href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub Profile</a></p>
   </main>
 </body>

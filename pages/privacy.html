@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy Policy for Solder3t Android apps.">
-  <title>Privacy Policy | Solder3t</title>
+  <meta name="description" content="Privacy Policy for Musaic Player — a local-first Android music player by Solder3t.">
+  <title>Privacy Policy — Musaic Player | Solder3t</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,17 +36,17 @@
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 1.5rem;
+      padding: 1.5rem 2rem;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       font-family: "Space Grotesk", sans-serif;
       line-height: 1.2;
     }
 
-    h2 {
-      margin-top: 1.6rem;
-    }
+    h1 { margin-top: 0.5rem; }
+    h2 { margin-top: 1.6rem; }
+    h3 { margin-top: 1.2rem; font-size: 1rem; }
 
     p, li {
       color: var(--muted);
@@ -61,65 +61,208 @@
       display: inline-block;
       margin-bottom: 1rem;
     }
+
+    .effective {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.8rem 0;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    th {
+      background: #f3ece1;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.3rem; }
+
+    code {
+      background: #eee8dd;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 1.2rem; }
+      table { font-size: 0.82rem; }
+    }
   </style>
 </head>
 <body>
   <main>
-    <a class="toplink" href="../index.html"><- Back to Home</a>
+    <a class="toplink" href="../index.html">&larr; Back to Home</a>
     <h1>Privacy Policy</h1>
-    <p>Last updated: March 18, 2026</p>
+    <p class="effective">Effective date: March 19, 2026 &middot; Last updated: March 19, 2026</p>
     <p>Public URL: <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a></p>
-    <p>Applies to: Musaic Player (<code>com.musaic.mp</code>)</p>
+    <p>Applies to: <strong>Musaic Player</strong> (package&nbsp;<code>com.musaic.mp</code>), published by Solder3t on Google&nbsp;Play.</p>
 
+    <!-- ───────────── Overview ───────────── -->
+    <h2>1. Overview</h2>
     <p>
-      Musaic Player is primarily an offline music player. Your local music library, playback history,
-      and app settings are stored on your device.
+      Musaic Player is a <strong>local-first, offline music player</strong> for Android.
+      It is designed to operate without user accounts, cloud storage, or advertising SDKs.
+      Your music library, playback history, preferences, and playlists are stored exclusively
+      on your device and are never uploaded to any server.
     </p>
 
-    <h2>Data Access and Permissions</h2>
+    <!-- ───────────── Data We Access ───────────── -->
+    <h2>2. Data We Access</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data&nbsp;Type</th>
+          <th>Purpose</th>
+          <th>Stored&nbsp;Where</th>
+          <th>Shared?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audio file metadata (title, artist, album, duration, album art)</td>
+          <td>Build and display your music library</td>
+          <td>On-device only</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Playback history &amp; statistics</td>
+          <td>Show listening statistics and "Recently Played"</td>
+          <td>On-device only</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>App preferences (theme, equalizer, library tabs)</td>
+          <td>Persist your UI and playback settings</td>
+          <td>On-device only</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Song title &amp; artist (when Online Lyrics is enabled)</td>
+          <td>Fetch matching lyrics from third-party providers</td>
+          <td>Not stored remotely</td>
+          <td>Yes — see <a href="#online-lyrics">Section 4</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ───────────── Permissions ───────────── -->
+    <h2>3. Permissions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Android&nbsp;Version</th>
+          <th>Why It Is Needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>READ_MEDIA_AUDIO</code></td>
+          <td>Android 13+</td>
+          <td>Discover and play audio files on your device</td>
+        </tr>
+        <tr>
+          <td><code>READ_EXTERNAL_STORAGE</code></td>
+          <td>Android 12 and below</td>
+          <td>Same purpose on older Android versions</td>
+        </tr>
+        <tr>
+          <td><code>FOREGROUND_SERVICE</code></td>
+          <td>All</td>
+          <td>Keep music playing in the background</td>
+        </tr>
+        <tr>
+          <td><code>INTERNET</code></td>
+          <td>All</td>
+          <td>Required only when Online Lyrics is enabled</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ───────────── Online Lyrics ───────────── -->
+    <h2 id="online-lyrics">4. Online Lyrics (Optional Feature)</h2>
     <p>
-      Musaic Player requests media permissions to read local audio files for playback:
-      READ_MEDIA_AUDIO (Android 13+) and READ_EXTERNAL_STORAGE (Android 12 and below).
+      When the <strong>Online Lyrics</strong> toggle is enabled in Settings or during onboarding,
+      Musaic Player sends the current song's <em>title</em>, <em>artist</em>, and <em>duration</em>
+      to third-party lyrics services over HTTPS to retrieve matching lyrics.
+    </p>
+    <ul>
+      <li>This feature is <strong>off by default</strong> and requires explicit opt-in.</li>
+      <li>No personally identifiable information (PII) such as device ID, IP address, or location is intentionally transmitted by the app.</li>
+      <li>We do not control third-party lyrics providers' own privacy practices.</li>
+    </ul>
+
+    <!-- ───────────── Data Collection ───────────── -->
+    <h2>5. Data Collection, Advertising &amp; Analytics</h2>
+    <p>
+      Musaic Player does <strong>not</strong>:
+    </p>
+    <ul>
+      <li>Collect, transmit, or sell personal data</li>
+      <li>Include advertising SDKs or ad trackers</li>
+      <li>Include analytics or crash-reporting SDKs that phone home</li>
+      <li>Require user-account creation or login</li>
+    </ul>
+
+    <!-- ───────────── Data Retention ───────────── -->
+    <h2>6. Data Retention &amp; Deletion</h2>
+    <p>
+      All user data (library database, playback history, preferences) is stored locally using
+      Android's Room database and DataStore. You can delete this data at any time by:
+    </p>
+    <ul>
+      <li>Clearing the app's data via <em>Settings → Apps → Musaic Player → Clear Data</em></li>
+      <li>Uninstalling the app</li>
+    </ul>
+    <p>
+      Because Musaic Player does not maintain server-side storage, no remote deletion request is necessary.
     </p>
 
-    <h2>Optional Online Lyrics</h2>
+    <!-- ───────────── Security ───────────── -->
+    <h2>7. Security</h2>
     <p>
-      If you enable online lyrics, the app may send limited track metadata (for example title and artist)
-      to third-party lyrics providers over HTTPS to fetch lyrics.
+      All network traffic initiated by the app (e.g., online lyrics requests) uses HTTPS.
+      The app does not intentionally expose data over cleartext HTTP.
+      Android's <code>allowBackup</code> is enabled for local device backups, but no cloud backup
+      of app data is initiated by the developer.
     </p>
 
-    <h2>Data Sharing</h2>
+    <!-- ───────────── Children ───────────── -->
+    <h2>8. Children's Privacy</h2>
     <p>
-      Musaic Player does not sell personal data. Metadata is transmitted only when needed for optional lyrics retrieval.
+      Musaic Player is not directed at children under the age of 13 (or the applicable minimum age
+      in your jurisdiction). We do not knowingly collect personal information from children.
     </p>
 
-    <h2>Data Retention and Deletion</h2>
+    <!-- ───────────── Changes ───────────── -->
+    <h2>9. Changes to This Policy</h2>
     <p>
-      Data remains on your device until you clear app data or uninstall the app.
-      Musaic Player does not require account creation and does not maintain server-side user accounts.
+      We may update this Privacy Policy as app features or legal requirements change.
+      Any updates will be published at this URL with a revised effective date.
+      Continued use of the app after changes constitutes acceptance of the updated policy.
     </p>
 
-    <h2>Security</h2>
+    <!-- ───────────── Contact ───────────── -->
+    <h2>10. Contact</h2>
     <p>
-      Network traffic for online requests uses HTTPS. The app does not intentionally expose user data to
-      insecure cleartext transport.
-    </p>
-
-    <h2>Children's Privacy</h2>
-    <p>
-      Musaic Player is not directed to children under the age required by applicable law unless explicitly declared.
-    </p>
-
-    <h2>Policy Updates</h2>
-    <p>
-      This policy may be updated as app features or legal requirements change.
-      Updates will be published on this page with a revised date.
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-      For privacy questions, contact:
-      <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a>
+      For questions or concerns about this Privacy Policy, contact:<br>
+      <strong>Email:</strong> <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a><br>
+      <strong>Developer:</strong> Solder3t<br>
+      <strong>Website:</strong> <a href="https://solder3t.github.io">https://solder3t.github.io</a>
     </p>
   </main>
 </body>
