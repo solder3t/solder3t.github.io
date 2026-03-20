@@ -5,7 +5,7 @@ const apps = [
     description: "High-fidelity offline player for local music playback with optional online lyrics lookup.",
     appId: "com.musaic.mp",
     playStoreUrl: "",
-    status: "Built and testing. Play Store listing coming soon."
+    status: "Release candidate. Play Store listing coming soon."
   }
 ];
 

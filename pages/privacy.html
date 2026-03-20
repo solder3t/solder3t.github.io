@@ -107,7 +107,7 @@
   <main>
     <a class="toplink" href="../index.html">&larr; Back to Home</a>
     <h1>Privacy Policy</h1>
-    <p class="effective">Effective date: March 19, 2026 &middot; Last updated: March 19, 2026</p>
+    <p class="effective">Effective date: March 21, 2026 &middot; Last updated: March 21, 2026</p>
     <p>Public URL: <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a></p>
     <p>Applies to: <strong>Musaic Player</strong> (package&nbsp;<code>com.musaic.mp</code>), published by Solder3t on Google&nbsp;Play.</p>
 
@@ -115,9 +115,9 @@
     <h2>1. Overview</h2>
     <p>
       Musaic Player is a <strong>local-first, offline music player</strong> for Android.
-      It is designed to operate without user accounts, cloud storage, or advertising SDKs.
-      Your music library, playback history, preferences, and playlists are stored exclusively
-      on your device and are never uploaded to any server.
+      It is designed to operate without user accounts, cloud storage, advertising SDKs, or analytics SDKs.
+      Your music library, playback history, preferences, playlists, and smart playlists are stored
+      exclusively on your device and are never uploaded to any server by the app.
     </p>
 
     <!-- ───────────── Data We Access ───────────── -->
@@ -147,6 +147,12 @@
         <tr>
           <td>App preferences (theme, equalizer, library tabs)</td>
           <td>Persist your UI and playback settings</td>
+          <td>On-device only</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Playlists and smart playlists</td>
+          <td>Organize music and create taste-based playlist collections</td>
           <td>On-device only</td>
           <td>No</td>
         </tr>
@@ -217,12 +223,16 @@
       <li>Include analytics or crash-reporting SDKs that phone home</li>
       <li>Require user-account creation or login</li>
     </ul>
+    <p>
+      The app also does not intentionally share your local playlists, favorites, or listening history
+      with other users or services.
+    </p>
 
     <!-- ───────────── Data Retention ───────────── -->
     <h2>6. Data Retention &amp; Deletion</h2>
     <p>
-      All user data (library database, playback history, preferences) is stored locally using
-      Android's Room database and DataStore. You can delete this data at any time by:
+      All user data (library database, playback history, preferences, playlists, and smart playlists)
+      is stored locally using Android's Room database and DataStore. You can delete this data at any time by:
     </p>
     <ul>
       <li>Clearing the app's data via <em>Settings → Apps → Musaic Player → Clear Data</em></li>
@@ -237,7 +247,7 @@
     <p>
       All network traffic initiated by the app (e.g., online lyrics requests) uses HTTPS.
       The app does not intentionally expose data over cleartext HTTP.
-      Android's <code>allowBackup</code> is enabled for local device backups, but no cloud backup
+      Android's backup behavior follows the user's device settings; Musaic does not add a separate cloud sync system.
       of app data is initiated by the developer.
     </p>
 
