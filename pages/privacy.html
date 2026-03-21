@@ -107,7 +107,7 @@
   <main>
     <a class="toplink" href="../index.html">&larr; Back to Home</a>
     <h1>Privacy Policy</h1>
-    <p class="effective">Effective date: March 21, 2026 &middot; Last updated: March 21, 2026</p>
+    <p class="effective">Effective date: March 22, 2026 &middot; Last updated: March 22, 2026</p>
     <p>Public URL: <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a></p>
     <p>Applies to: <strong>Musaic Player</strong> (package&nbsp;<code>com.musaic.mp</code>), published by Solder3t on Google&nbsp;Play.</p>
 
@@ -162,6 +162,12 @@
           <td>Not stored remotely</td>
           <td>Yes — see <a href="#online-lyrics">Section 4</a></td>
         </tr>
+        <tr>
+          <td>Lyrics text (when AI Romanization is enabled)</td>
+          <td>Convert non-Latin lyrics to Latin script using a user-chosen AI service</td>
+          <td>Not stored remotely</td>
+          <td>Yes — see <a href="#ai-romanization">Section 4a</a></td>
+        </tr>
       </tbody>
     </table>
 
@@ -194,7 +200,7 @@
         <tr>
           <td><code>INTERNET</code></td>
           <td>All</td>
-          <td>Required only when Online Lyrics is enabled</td>
+          <td>Required when Online Lyrics or AI Romanization is enabled</td>
         </tr>
       </tbody>
     </table>
@@ -210,6 +216,29 @@
       <li>This feature is <strong>off by default</strong> and requires explicit opt-in.</li>
       <li>No personally identifiable information (PII) such as device ID, IP address, or location is intentionally transmitted by the app.</li>
       <li>We do not control third-party lyrics providers' own privacy practices.</li>
+    </ul>
+
+    <!-- ───────────── AI Romanization ───────────── -->
+    <h2 id="ai-romanization">4a. AI-Powered Romanization (Optional Feature)</h2>
+    <p>
+      When <strong>Romanize Lyrics</strong> is enabled and an AI provider is selected in Settings,
+      Musaic Player sends the current song's <em>lyrics text</em> to the user-chosen AI service
+      over HTTPS to convert non-Latin script into Latin/Roman characters.
+    </p>
+    <ul>
+      <li>This feature is <strong>off by default</strong>. Users must explicitly enable romanization and select an AI provider.</li>
+      <li><strong>API keys</strong> provided by the user are stored exclusively on-device using Android DataStore and are <strong>never</strong> shared with Solder3t or any party other than the selected AI provider.</li>
+      <li>Only the lyrics text is sent to the provider. No device identifiers, user accounts, or personal information are transmitted.</li>
+      <li>Users who select <strong>Ollama</strong> (open-source, self-hosted) can run romanization entirely on their own hardware with no data leaving their network.</li>
+      <li>Supported third-party providers and their privacy policies:
+        <ul>
+          <li><a href="https://policies.google.com/privacy" target="_blank">Google Gemini</a></li>
+          <li><a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI</a></li>
+          <li><a href="https://www.anthropic.com/privacy" target="_blank">Anthropic (Claude)</a></li>
+          <li><a href="https://www.deepseek.com/privacy" target="_blank">DeepSeek</a></li>
+          <li><a href="https://groq.com/privacy-policy/" target="_blank">Groq</a></li>
+        </ul>
+      </li>
     </ul>
 
     <!-- ───────────── Data Collection ───────────── -->
