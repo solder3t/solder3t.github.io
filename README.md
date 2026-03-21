@@ -1,13 +1,21 @@
 # Solder3t Website
 
-This repository contains the public website for **Solder3t**, an independent Android developer.
-It is a lightweight static site that serves:
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen?style=for-the-badge)](https://solder3t.github.io)
+[![License](https://img.shields.io/badge/license-none-lightgrey?style=for-the-badge)](#license)
+[![Static Site](https://img.shields.io/badge/site-static-orange?style=for-the-badge)](#local-preview)
 
-- the main landing page
-- app listings
-- GitHub project previews
-- support information
-- privacy policy, support, and terms pages for **Musaic Player**
+The public home of **Solder3t**, an independent Android developer focused on clean, practical apps.
+
+Website: [solder3t.github.io](https://solder3t.github.io)
+
+This site acts as a lightweight portfolio and publishing hub:
+
+- it introduces the developer and current Android work
+- it highlights published and in-progress apps
+- it surfaces recent GitHub projects
+- it hosts support, privacy, and terms pages for Play Store submissions
+
+The site is intentionally simple: plain HTML, CSS, and JavaScript, with no build step.
 
 ## Repository Structure
 
@@ -23,6 +31,7 @@ It is a lightweight static site that serves:
 - GitHub repository previews loaded from the GitHub API
 - Support, privacy policy, and terms pages for Play Store use
 - Simple reveal animations and automatic footer year updates
+- Ready for GitHub Pages deployment without a framework
 
 ## Local Preview
 
@@ -44,6 +53,12 @@ http://localhost:8000
 
 This repository is set up like a GitHub Pages site. After pushing changes, GitHub Pages can serve the contents of this repository directly.
 
+If you are using GitHub Pages:
+
+- point Pages at the repository root
+- leave the source as the main branch or your preferred deployment branch
+- ensure `index.html` remains at the top level so the homepage resolves correctly
+
 ## Notes
 
 - The homepage fetches public repositories from `https://api.github.com/users/solder3t/repos`.
@@ -52,4 +67,4 @@ This repository is set up like a GitHub Pages site. After pushing changes, GitHu
 
 ## License
 
-No license file is included in this repository. Add one if you want to define reuse terms for the site content or code.
+No license file is included in this repository. The project should be treated as all rights reserved unless a license is added later.
