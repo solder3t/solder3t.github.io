@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "📦 Bootstrapping linux-setup utility..."
+WORKDIR="$(mktemp -d)"
+cd "$WORKDIR" || exit 1
+
+# Download and extract the latest main branch of linux-setup
+curl -fsSL "https://github.com/solder3t/linux-setup/archive/refs/heads/main.tar.gz" | tar -xz
+cd linux-setup-main || exit 1
+
+echo "▶ Launching Installer..."
+# Execute the installation script, reconnecting stdin to the console 
+# so the interactive whiptail TUI works perfectly even when piped from curl.
+exec bash ./install.sh "$@" < /dev/tty
