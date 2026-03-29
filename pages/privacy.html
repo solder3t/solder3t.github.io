@@ -107,7 +107,7 @@
   <main>
     <a class="toplink" href="../index.html">&larr; Back to Home</a>
     <h1>Privacy Policy</h1>
-    <p class="effective">Effective date: March 22, 2026 &middot; Last updated: March 22, 2026</p>
+    <p class="effective">Effective date: March 22, 2026 &middot; Last updated: March 30, 2026</p>
     <p>Public URL: <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a></p>
     <p>Applies to: <strong>Musaic Player</strong> (package&nbsp;<code>com.musaic.mp</code>), published by Solder3t on Google&nbsp;Play.</p>
 
@@ -168,6 +168,12 @@
           <td>Not stored remotely</td>
           <td>Yes — see <a href="#ai-romanization">Section 4a</a></td>
         </tr>
+        <tr>
+          <td>Track metadata edits (title, artist, album, language)</td>
+          <td>Allow you to edit track properties; changes are written to file tags and stored locally</td>
+          <td>On-device only (written to audio file)</td>
+          <td>No</td>
+        </tr>
       </tbody>
     </table>
 
@@ -201,6 +207,11 @@
           <td><code>INTERNET</code></td>
           <td>All</td>
           <td>Required when Online Lyrics or AI Romanization is enabled</td>
+        </tr>
+        <tr>
+          <td><code>MODIFY_AUDIO_SETTINGS</code></td>
+          <td>All</td>
+          <td>Equalizer, bass boost, and virtualizer audio effects</td>
         </tr>
       </tbody>
     </table>
