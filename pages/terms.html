@@ -4,167 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Terms of Service for Musaic Player — a local-first Android music player by Solder3t.">
+  <meta name="theme-color" content="#0a0a0f">
   <title>Terms of Service — Musaic Player | Solder3t</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
   <style>
-    :root {
-      --bg: #f6efe5;
-      --paper: #fffdf9;
-      --ink: #152132;
-      --muted: #4f5f73;
-      --line: #d9ccba;
-      --accent: #0f3d3e;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: radial-gradient(circle at 10% 0%, #fff4de 0, transparent 44%), var(--bg);
-      color: var(--ink);
-      font-family: "Manrope", sans-serif;
-      line-height: 1.6;
-    }
-
-    main {
-      width: min(850px, calc(100% - 2rem));
-      margin: 2rem auto;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 1.5rem 2rem;
-    }
-
-    h1, h2, h3 {
-      font-family: "Space Grotesk", sans-serif;
-      line-height: 1.2;
-    }
-
-    h1 { margin-top: 0.5rem; }
-    h2 { margin-top: 1.6rem; }
-
-    p, li {
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .toplink {
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    .effective {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: 0.3rem; }
-
-    code {
-      background: #eee8dd;
-      padding: 0.15em 0.4em;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      main { padding: 1.2rem; }
-    }
+    .page-content { max-width: 800px; margin: 0 auto; padding: 120px 0 80px; }
+    .page-back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color 0.2s ease; }
+    .page-back:hover { color: var(--text); }
+    .page-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .page-meta { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2.5rem; }
+    .page-body h2 { font-size: 1.2rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.6rem; }
+    .page-body p, .page-body li { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
+    .page-body ul { padding-left: 1.25rem; }
+    .page-body li { margin-bottom: 0.4rem; }
+    .page-body a { color: var(--accent-light); text-decoration: none; font-weight: 500; }
+    .page-body a:hover { color: var(--accent); }
+    .page-body code { background: var(--bg-card); border: 1px solid var(--border); padding: 0.15em 0.45em; border-radius: 6px; font-family: var(--font-mono); font-size: 0.85em; color: var(--text); }
+    .page-body strong { color: var(--text); font-weight: 600; }
+    @media (max-width: 600px) { .page-content { padding: 100px 0 60px; } }
   </style>
 </head>
 <body>
-  <main>
-    <a class="toplink" href="../index.html">&larr; Back to Home</a>
-    <h1>Terms of Service</h1>
-    <p class="effective">Effective date: March 22, 2026 &middot; Last updated: March 30, 2026</p>
-    <p>Applies to: <strong>Musaic Player</strong> (<code>com.musaic.mp</code>), published by Solder3t.</p>
+  <div class="mesh-bg" aria-hidden="true"><div class="mesh-orb mesh-orb--1"></div><div class="mesh-orb mesh-orb--2"></div></div>
+  <div class="grain" aria-hidden="true"></div>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>
-      By installing or using Musaic Player ("the App"), you agree to these Terms of Service.
-      If you do not agree, you should uninstall the App.
-    </p>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html" aria-label="Solder3t Home">
+        <span class="logo-mark"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="url(#lg)"/><path d="M8 14.5C8 12 10 10 13 10C15.5 10 17 11.5 17 13.5C17 15.5 15.5 16.5 13 17C10.5 17.5 9 18.5 9 20.5C9 22.5 10.5 24 13 24C15.5 24 17 22.5 17 21" stroke="white" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg></span>
+        <span class="logo-text">Solder3t</span>
+      </a>
+      <nav class="nav"><a href="../index.html#work" class="nav-link">Work</a><a href="../index.html#about" class="nav-link">About</a><a href="support.html" class="nav-link">Support</a><a href="privacy.html" class="nav-link">Privacy</a><a href="terms.html" class="nav-link">Terms</a></nav>
+    </div>
+  </header>
 
-    <h2>2. Description of Service</h2>
-    <p>
-      Musaic Player is a free, local-first music player for Android. It scans audio files stored
-      on your device and provides playback, library management, smart playlists, and related features.
-      The App optionally connects to the internet to fetch song lyrics when the user explicitly
-      enables the Online Lyrics feature.
-    </p>
+  <main class="page-content">
+    <a class="page-back" href="../index.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Home</a>
+    <h1 class="page-title">Terms of Service</h1>
+    <p class="page-meta">Effective: March 22, 2026 · Last updated: April 5, 2026</p>
 
-    <h2>3. User Responsibilities</h2>
-    <ul>
-      <li>You are responsible for the legality of any audio files stored on your device.</li>
-      <li>You must grant the required permissions for the App to function (audio file access).</li>
-      <li>You must not reverse-engineer, decompile, or modify the App beyond what is permitted by applicable law.</li>
-    </ul>
+    <div class="page-body">
+      <p>Applies to: <strong>Musaic Player</strong> (<code>com.musaic.mp</code>), published by Solder3t.</p>
 
-    <h2>4. Intellectual Property</h2>
-    <p>
-      The App, its design, code, and branding are the property of Solder3t.
-      Audio files on your device remain your property and are not claimed by us.
-    </p>
+      <h2>1. Acceptance of Terms</h2>
+      <p>By installing or using Musaic Player ("the App"), you agree to these Terms of Service. If you do not agree, you should uninstall the App.</p>
 
-    <h2>4.1 User Content</h2>
-    <p>
-      Your local library metadata, playlists, favorites, listening history, and smart playlists are
-      stored on your device and controlled by you. Musaic does not claim ownership over that data.
-    </p>
+      <h2>2. Description of Service</h2>
+      <p>Musaic Player is a free, local-first music player for Android. It scans audio files stored on your device and provides playback, library management, smart playlists, and related features. The App optionally connects to the internet to fetch song lyrics when the user explicitly enables the Online Lyrics feature.</p>
 
-    <h2>5. Third-Party Services</h2>
-    <p>
-      When Online Lyrics is enabled, the App communicates with third-party lyrics providers.
-      When AI Romanization is enabled, the App communicates with user-selected AI services,
-      which may include Google Gemini, OpenAI, Anthropic (Claude), DeepSeek, Groq, or a
-      self-hosted Ollama instance.
-    </p>
-    <ul>
-      <li>We are not responsible for the content, accuracy, or availability of third-party services.</li>
-      <li>Your use of these services is subject to their own terms and privacy policies.</li>
-      <li>You are responsible for compliance with each AI provider's API usage terms, including rate limits and acceptable use policies.</li>
-      <li>API keys are stored locally on your device. Solder3t does not collect or have access to your API keys.</li>
-    </ul>
+      <h2>3. User Responsibilities</h2>
+      <ul>
+        <li>You are responsible for the legality of any audio files stored on your device.</li>
+        <li>You must grant the required permissions for the App to function (audio file access).</li>
+        <li>You must not reverse-engineer, decompile, or modify the App beyond what is permitted by applicable law.</li>
+      </ul>
 
-    <h2>6. Disclaimer of Warranties</h2>
-    <p>
-      The App is provided "as is" without warranty of any kind, express or implied.
-      Solder3t does not guarantee uninterrupted or error-free operation.
-    </p>
+      <h2>4. Intellectual Property</h2>
+      <p>The App, its design, code, and branding are the property of Solder3t. Audio files on your device remain your property and are not claimed by us.</p>
 
-    <h2>7. Limitation of Liability</h2>
-    <p>
-      To the fullest extent permitted by law, Solder3t shall not be liable for any indirect,
-      incidental, or consequential damages arising from the use or inability to use the App,
-      including but not limited to data loss or device malfunction.
-    </p>
+      <h2>4.1 User Content</h2>
+      <p>Your local library metadata, playlists, favorites, listening history, and smart playlists are stored on your device and controlled by you. Solder3t does not claim ownership over that data.</p>
 
-    <h2>8. Changes to These Terms</h2>
-    <p>
-      We reserve the right to update these Terms at any time. Changes will be published at this
-      URL with a revised date. Continued use of the App after changes constitutes acceptance.
-    </p>
+      <h2>5. Third-Party Services</h2>
+      <p>When Online Lyrics is enabled, the App communicates with third-party lyrics providers. When AI Romanization is enabled, the App communicates with user-selected AI services, which may include Google Gemini, OpenAI, Anthropic (Claude), DeepSeek, Groq, or a self-hosted Ollama instance.</p>
+      <ul>
+        <li>We are not responsible for the content, accuracy, or availability of third-party services.</li>
+        <li>Your use of these services is subject to their own terms and privacy policies.</li>
+        <li>You are responsible for compliance with each AI provider's API usage terms, including rate limits and acceptable use policies.</li>
+        <li>API keys are stored locally on your device. Solder3t does not collect or have access to your API keys.</li>
+      </ul>
 
-    <h2>9. Governing Law</h2>
-    <p>
-      These Terms shall be governed by applicable laws in the developer's jurisdiction.
-    </p>
+      <h2>6. Disclaimer of Warranties</h2>
+      <p>The App is provided "as is" without warranty of any kind, express or implied. Solder3t does not guarantee uninterrupted or error-free operation.</p>
 
-    <h2>10. Contact</h2>
-    <p>
-      For questions about these Terms, contact:<br>
-      <strong>Email:</strong> <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a><br>
-      <strong>Website:</strong> <a href="https://solder3t.github.io">https://solder3t.github.io</a>
-    </p>
+      <h2>7. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Solder3t shall not be liable for any indirect, incidental, or consequential damages arising from the use or inability to use the App, including but not limited to data loss or device malfunction.</p>
+
+      <h2>8. Changes to These Terms</h2>
+      <p>We reserve the right to update these Terms at any time. Changes will be published at this URL with a revised date. Continued use of the App after changes constitutes acceptance.</p>
+
+      <h2>9. Governing Law</h2>
+      <p>These Terms shall be governed by applicable laws in the developer's jurisdiction.</p>
+
+      <h2>10. Contact</h2>
+      <p>For questions about these Terms, contact:<br>
+        <strong>Email:</strong> <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a><br>
+        <strong>Website:</strong> <a href="https://solder3t.github.io">https://solder3t.github.io</a>
+      </p>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="footer-logo">Solder3t</span><p class="footer-tagline">Building Android apps that respect your privacy.</p></div>
+      <div class="footer-links"><a href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div>
+      <p class="footer-copy">&copy; <span id="year"></span> Solder3t. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
 </body>
 </html>

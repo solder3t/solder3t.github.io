@@ -4,316 +4,242 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Privacy Policy for Musaic Player — a local-first Android music player by Solder3t.">
+  <meta name="theme-color" content="#0a0a0f">
   <title>Privacy Policy — Musaic Player | Solder3t</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
   <style>
-    :root {
-      --bg: #f6efe5;
-      --paper: #fffdf9;
-      --ink: #152132;
-      --muted: #4f5f73;
-      --line: #d9ccba;
-      --accent: #0f3d3e;
+    .page-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 120px 0 80px;
     }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: radial-gradient(circle at 10% 0%, #fff4de 0, transparent 44%), var(--bg);
-      color: var(--ink);
-      font-family: "Manrope", sans-serif;
-      line-height: 1.6;
+    .page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: color 0.2s ease;
     }
-
-    main {
-      width: min(850px, calc(100% - 2rem));
-      margin: 2rem auto;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 1.5rem 2rem;
+    .page-back:hover { color: var(--text); }
+    .page-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
     }
-
-    h1, h2, h3 {
-      font-family: "Space Grotesk", sans-serif;
-      line-height: 1.2;
+    .page-meta {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-bottom: 2.5rem;
     }
-
-    h1 { margin-top: 0.5rem; }
-    h2 { margin-top: 1.6rem; }
-    h3 { margin-top: 1.2rem; font-size: 1rem; }
-
-    p, li {
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--accent);
+    .page-body h2 {
+      font-size: 1.3rem;
       font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
     }
-
-    .toplink {
-      display: inline-block;
-      margin-bottom: 1rem;
+    .page-body p, .page-body li {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
-
-    .effective {
-      font-size: 0.92rem;
-      color: var(--muted);
+    .page-body ul {
+      padding-left: 1.25rem;
     }
-
-    table {
+    .page-body li {
+      margin-bottom: 0.4rem;
+    }
+    .page-body a {
+      color: var(--accent-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .page-body a:hover { color: var(--accent); }
+    .page-body code {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 0.15em 0.45em;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.85em;
+      color: var(--text);
+    }
+    .page-body table {
       width: 100%;
       border-collapse: collapse;
-      margin: 0.8rem 0;
-      font-size: 0.93rem;
+      margin: 1rem 0;
+      font-size: 0.88rem;
     }
-
-    th, td {
+    .page-body th, .page-body td {
       text-align: left;
-      padding: 0.55rem 0.7rem;
-      border: 1px solid var(--line);
-      color: var(--muted);
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
     }
-
-    th {
-      background: #f3ece1;
-      color: var(--ink);
+    .page-body th {
+      background: var(--bg-elevated);
+      color: var(--text);
       font-weight: 600;
     }
-
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: 0.3rem; }
-
-    code {
-      background: #eee8dd;
-      padding: 0.15em 0.4em;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-
+    .page-body strong { color: var(--text); font-weight: 600; }
     @media (max-width: 600px) {
-      main { padding: 1.2rem; }
-      table { font-size: 0.82rem; }
+      .page-content { padding: 100px 0 60px; }
+      .page-body table { font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <a class="toplink" href="../index.html">&larr; Back to Home</a>
-    <h1>Privacy Policy</h1>
-    <p class="effective">Effective date: March 22, 2026 &middot; Last updated: March 30, 2026</p>
-    <p>Public URL: <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a></p>
-    <p>Applies to: <strong>Musaic Player</strong> (package&nbsp;<code>com.musaic.mp</code>), published by Solder3t on Google&nbsp;Play.</p>
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-orb mesh-orb--1"></div>
+    <div class="mesh-orb mesh-orb--2"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
 
-    <!-- ───────────── Overview ───────────── -->
-    <h2>1. Overview</h2>
-    <p>
-      Musaic Player is a <strong>local-first, offline music player</strong> for Android.
-      It is designed to operate without user accounts, cloud storage, advertising SDKs, or analytics SDKs.
-      Your music library, playback history, preferences, playlists, and smart playlists are stored
-      exclusively on your device and are never uploaded to any server by the app.
-    </p>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html" aria-label="Solder3t Home">
+        <span class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="url(#logoGrad)"/><path d="M8 14.5C8 12 10 10 13 10C15.5 10 17 11.5 17 13.5C17 15.5 15.5 16.5 13 17C10.5 17.5 9 18.5 9 20.5C9 22.5 10.5 24 13 24C15.5 24 17 22.5 17 21" stroke="white" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg>
+        </span>
+        <span class="logo-text">Solder3t</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#work" class="nav-link">Work</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="support.html" class="nav-link">Support</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
+        <a href="terms.html" class="nav-link">Terms</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- ───────────── Data We Access ───────────── -->
-    <h2>2. Data We Access</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Data&nbsp;Type</th>
-          <th>Purpose</th>
-          <th>Stored&nbsp;Where</th>
-          <th>Shared?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Audio file metadata (title, artist, album, duration, album art)</td>
-          <td>Build and display your music library</td>
-          <td>On-device only</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td>Playback history &amp; statistics</td>
-          <td>Show listening statistics and "Recently Played"</td>
-          <td>On-device only</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td>App preferences (theme, equalizer, library tabs)</td>
-          <td>Persist your UI and playback settings</td>
-          <td>On-device only</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td>Playlists and smart playlists</td>
-          <td>Organize music and create taste-based playlist collections</td>
-          <td>On-device only</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td>Song title &amp; artist (when Online Lyrics is enabled)</td>
-          <td>Fetch matching lyrics from third-party providers</td>
-          <td>Not stored remotely</td>
-          <td>Yes — see <a href="#online-lyrics">Section 4</a></td>
-        </tr>
-        <tr>
-          <td>Lyrics text (when AI Romanization is enabled)</td>
-          <td>Convert non-Latin lyrics to Latin script using a user-chosen AI service</td>
-          <td>Not stored remotely</td>
-          <td>Yes — see <a href="#ai-romanization">Section 4a</a></td>
-        </tr>
-        <tr>
-          <td>Track metadata edits (title, artist, album, language)</td>
-          <td>Allow you to edit track properties; changes are written to file tags and stored locally</td>
-          <td>On-device only (written to audio file)</td>
-          <td>No</td>
-        </tr>
-      </tbody>
-    </table>
+  <main class="page-content">
+    <a class="page-back" href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Home
+    </a>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-meta">Effective: March 22, 2026 · Last updated: April 5, 2026</p>
 
-    <!-- ───────────── Permissions ───────────── -->
-    <h2>3. Permissions</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Permission</th>
-          <th>Android&nbsp;Version</th>
-          <th>Why It Is Needed</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>READ_MEDIA_AUDIO</code></td>
-          <td>Android 13+</td>
-          <td>Discover and play audio files on your device</td>
-        </tr>
-        <tr>
-          <td><code>READ_EXTERNAL_STORAGE</code></td>
-          <td>Android 12 and below</td>
-          <td>Same purpose on older Android versions</td>
-        </tr>
-        <tr>
-          <td><code>FOREGROUND_SERVICE</code></td>
-          <td>All</td>
-          <td>Keep music playing in the background</td>
-        </tr>
-        <tr>
-          <td><code>INTERNET</code></td>
-          <td>All</td>
-          <td>Required when Online Lyrics or AI Romanization is enabled</td>
-        </tr>
-        <tr>
-          <td><code>MODIFY_AUDIO_SETTINGS</code></td>
-          <td>All</td>
-          <td>Equalizer, bass boost, and virtualizer audio effects</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="page-body">
+      <p>Public URL: <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a></p>
+      <p>Applies to: <strong>Musaic Player</strong> (package <code>com.musaic.mp</code>), published by Solder3t on Google Play.</p>
 
-    <!-- ───────────── Online Lyrics ───────────── -->
-    <h2 id="online-lyrics">4. Online Lyrics (Optional Feature)</h2>
-    <p>
-      When the <strong>Online Lyrics</strong> toggle is enabled in Settings or during onboarding,
-      Musaic Player sends the current song's <em>title</em>, <em>artist</em>, and <em>duration</em>
-      to third-party lyrics services over HTTPS to retrieve matching lyrics.
-    </p>
-    <ul>
-      <li>This feature is <strong>off by default</strong> and requires explicit opt-in.</li>
-      <li>No personally identifiable information (PII) such as device ID, IP address, or location is intentionally transmitted by the app.</li>
-      <li>We do not control third-party lyrics providers' own privacy practices.</li>
-    </ul>
+      <h2>1. Overview</h2>
+      <p>Musaic Player is a <strong>local-first, offline music player</strong> for Android. It is designed to operate without user accounts, cloud storage, advertising SDKs, or analytics SDKs. Your music library, playback history, preferences, playlists, and smart playlists are stored exclusively on your device and are never uploaded to any server by the app.</p>
 
-    <!-- ───────────── AI Romanization ───────────── -->
-    <h2 id="ai-romanization">4a. AI-Powered Romanization (Optional Feature)</h2>
-    <p>
-      When <strong>Romanize Lyrics</strong> is enabled and an AI provider is selected in Settings,
-      Musaic Player sends the current song's <em>lyrics text</em> to the user-chosen AI service
-      over HTTPS to convert non-Latin script into Latin/Roman characters.
-    </p>
-    <ul>
-      <li>This feature is <strong>off by default</strong>. Users must explicitly enable romanization and select an AI provider.</li>
-      <li><strong>API keys</strong> provided by the user are stored exclusively on-device using Android DataStore and are <strong>never</strong> shared with Solder3t or any party other than the selected AI provider.</li>
-      <li>Only the lyrics text is sent to the provider. No device identifiers, user accounts, or personal information are transmitted.</li>
-      <li>Users who select <strong>Ollama</strong> (open-source, self-hosted) can run romanization entirely on their own hardware with no data leaving their network.</li>
-      <li>Supported third-party providers and their privacy policies:
-        <ul>
-          <li><a href="https://policies.google.com/privacy" target="_blank">Google Gemini</a></li>
-          <li><a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI</a></li>
-          <li><a href="https://www.anthropic.com/privacy" target="_blank">Anthropic (Claude)</a></li>
-          <li><a href="https://www.deepseek.com/privacy" target="_blank">DeepSeek</a></li>
-          <li><a href="https://groq.com/privacy-policy/" target="_blank">Groq</a></li>
-        </ul>
-      </li>
-    </ul>
+      <h2>2. Data We Access</h2>
+      <table>
+        <thead><tr><th>Data Type</th><th>Purpose</th><th>Stored Where</th><th>Shared?</th></tr></thead>
+        <tbody>
+          <tr><td>Audio file metadata (title, artist, album, duration, album art)</td><td>Build and display your music library</td><td>On-device only</td><td>No</td></tr>
+          <tr><td>Playback history & statistics</td><td>Show listening statistics and "Recently Played"</td><td>On-device only</td><td>No</td></tr>
+          <tr><td>App preferences (theme, equalizer, library tabs)</td><td>Persist your UI and playback settings</td><td>On-device only</td><td>No</td></tr>
+          <tr><td>Playlists and smart playlists</td><td>Organize music and create taste-based playlist collections</td><td>On-device only</td><td>No</td></tr>
+          <tr><td>Song title & artist (when Online Lyrics is enabled)</td><td>Fetch matching lyrics from third-party providers</td><td>Not stored remotely</td><td>Yes — see Section 4</td></tr>
+          <tr><td>Lyrics text (when AI Romanization is enabled)</td><td>Convert non-Latin lyrics to Latin script using a user-chosen AI service</td><td>Not stored remotely</td><td>Yes — see Section 4a</td></tr>
+          <tr><td>Track metadata edits (title, artist, album, language)</td><td>Allow you to edit track properties; changes are written to file tags and stored locally</td><td>On-device only (written to audio file)</td><td>No</td></tr>
+        </tbody>
+      </table>
 
-    <!-- ───────────── Data Collection ───────────── -->
-    <h2>5. Data Collection, Advertising &amp; Analytics</h2>
-    <p>
-      Musaic Player does <strong>not</strong>:
-    </p>
-    <ul>
-      <li>Collect, transmit, or sell personal data</li>
-      <li>Include advertising SDKs or ad trackers</li>
-      <li>Include analytics or crash-reporting SDKs that phone home</li>
-      <li>Require user-account creation or login</li>
-    </ul>
-    <p>
-      The app also does not intentionally share your local playlists, favorites, or listening history
-      with other users or services.
-    </p>
+      <h2>3. Permissions</h2>
+      <table>
+        <thead><tr><th>Permission</th><th>Android Version</th><th>Why It Is Needed</th></tr></thead>
+        <tbody>
+          <tr><td><code>READ_MEDIA_AUDIO</code></td><td>Android 13+</td><td>Discover and play audio files on your device</td></tr>
+          <tr><td><code>READ_EXTERNAL_STORAGE</code></td><td>Android 12 and below</td><td>Same purpose on older Android versions</td></tr>
+          <tr><td><code>FOREGROUND_SERVICE</code></td><td>All</td><td>Keep music playing in the background</td></tr>
+          <tr><td><code>INTERNET</code></td><td>All</td><td>Required when Online Lyrics or AI Romanization is enabled</td></tr>
+          <tr><td><code>MODIFY_AUDIO_SETTINGS</code></td><td>All</td><td>Equalizer, bass boost, and virtualizer audio effects</td></tr>
+        </tbody>
+      </table>
 
-    <!-- ───────────── Data Retention ───────────── -->
-    <h2>6. Data Retention &amp; Deletion</h2>
-    <p>
-      All user data (library database, playback history, preferences, playlists, and smart playlists)
-      is stored locally using Android's Room database and DataStore. You can delete this data at any time by:
-    </p>
-    <ul>
-      <li>Clearing the app's data via <em>Settings → Apps → Musaic Player → Clear Data</em></li>
-      <li>Uninstalling the app</li>
-    </ul>
-    <p>
-      Because Musaic Player does not maintain server-side storage, no remote deletion request is necessary.
-    </p>
+      <h2 id="online-lyrics">4. Online Lyrics (Optional Feature)</h2>
+      <p>When the <strong>Online Lyrics</strong> toggle is enabled in Settings or during onboarding, Musaic Player sends the current song's <em>title</em>, <em>artist</em>, and <em>duration</em> to third-party lyrics services over HTTPS to retrieve matching lyrics.</p>
+      <ul>
+        <li>This feature is <strong>off by default</strong> and requires explicit opt-in.</li>
+        <li>No personally identifiable information (PII) such as device ID, IP address, or location is intentionally transmitted by the app.</li>
+        <li>We do not control third-party lyrics providers' own privacy practices.</li>
+      </ul>
 
-    <!-- ───────────── Security ───────────── -->
-    <h2>7. Security</h2>
-    <p>
-      All network traffic initiated by the app (e.g., online lyrics requests) uses HTTPS.
-      The app does not intentionally expose data over cleartext HTTP.
-      Android's backup behavior follows the user's device settings; Musaic does not add a separate cloud sync system.
-      of app data is initiated by the developer.
-    </p>
+      <h2 id="ai-romanization">4a. AI-Powered Romanization (Optional Feature)</h2>
+      <p>When <strong>Romanize Lyrics</strong> is enabled and an AI provider is selected in Settings, Musaic Player sends the current song's <em>lyrics text</em> to the user-chosen AI service over HTTPS to convert non-Latin script into Latin/Roman characters.</p>
+      <ul>
+        <li>This feature is <strong>off by default</strong>. Users must explicitly enable romanization and select an AI provider.</li>
+        <li><strong>API keys</strong> provided by the user are stored exclusively on-device using Android DataStore and are encrypted using Android Keystore. They are <strong>never</strong> shared with Solder3t or any party other than the selected AI provider.</li>
+        <li>Only the lyrics text is sent to the provider. No device identifiers, user accounts, or personal information are transmitted.</li>
+        <li>Users who select <strong>Ollama</strong> (open-source, self-hosted) can run romanization entirely on their own hardware with no data leaving their network.</li>
+        <li>Supported third-party providers and their privacy policies:
+          <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank">Google Gemini</a></li>
+            <li><a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI</a></li>
+            <li><a href="https://www.anthropic.com/privacy" target="_blank">Anthropic (Claude)</a></li>
+            <li><a href="https://www.deepseek.com/privacy" target="_blank">DeepSeek</a></li>
+            <li><a href="https://groq.com/privacy-policy/" target="_blank">Groq</a></li>
+          </ul>
+        </li>
+      </ul>
 
-    <!-- ───────────── Children ───────────── -->
-    <h2>8. Children's Privacy</h2>
-    <p>
-      Musaic Player is not directed at children under the age of 13 (or the applicable minimum age
-      in your jurisdiction). We do not knowingly collect personal information from children.
-    </p>
+      <h2>5. Data Collection, Advertising & Analytics</h2>
+      <p>Musaic Player does <strong>not</strong>:</p>
+      <ul>
+        <li>Collect, transmit, or sell personal data</li>
+        <li>Include advertising SDKs or ad trackers</li>
+        <li>Include analytics or crash-reporting SDKs that phone home</li>
+        <li>Require user-account creation or login</li>
+      </ul>
+      <p>The app also does not intentionally share your local playlists, favorites, or listening history with other users or services.</p>
 
-    <!-- ───────────── Changes ───────────── -->
-    <h2>9. Changes to This Policy</h2>
-    <p>
-      We may update this Privacy Policy as app features or legal requirements change.
-      Any updates will be published at this URL with a revised effective date.
-      Continued use of the app after changes constitutes acceptance of the updated policy.
-    </p>
+      <h2>6. Data Retention & Deletion</h2>
+      <p>All user data (library database, playback history, preferences, playlists, and smart playlists) is stored locally using Android's Room database and DataStore. You can delete this data at any time by:</p>
+      <ul>
+        <li>Clearing the app's data via <em>Settings → Apps → Musaic Player → Clear Data</em></li>
+        <li>Uninstalling the app</li>
+      </ul>
+      <p>Because Musaic Player does not maintain server-side storage, no remote deletion request is necessary.</p>
 
-    <!-- ───────────── Contact ───────────── -->
-    <h2>10. Contact</h2>
-    <p>
-      For questions or concerns about this Privacy Policy, contact:<br>
-      <strong>Email:</strong> <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a><br>
-      <strong>Developer:</strong> Solder3t<br>
-      <strong>Website:</strong> <a href="https://solder3t.github.io">https://solder3t.github.io</a>
-    </p>
+      <h2>7. Security</h2>
+      <p>All network traffic initiated by the app (e.g., online lyrics requests) uses HTTPS. The app does not intentionally expose data over cleartext HTTP. AI API keys are encrypted using Android Keystore. Android's backup behavior follows the user's device settings; Solder3t does not initiate any cloud sync of app data.</p>
+
+      <h2>8. Children's Privacy</h2>
+      <p>Musaic Player is not directed at children under the age of 13 (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal information from children.</p>
+
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy as app features or legal requirements change. Any updates will be published at this URL with a revised effective date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>10. Contact</h2>
+      <p>For questions or concerns about this Privacy Policy, contact:<br>
+        <strong>Email:</strong> <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a><br>
+        <strong>Developer:</strong> Solder3t<br>
+        <strong>Website:</strong> <a href="https://solder3t.github.io">https://solder3t.github.io</a>
+      </p>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Solder3t</span>
+        <p class="footer-tagline">Building Android apps that respect your privacy.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Solder3t. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
 </body>
 </html>

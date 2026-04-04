@@ -3,134 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Support page for Musaic Player — help, bug reports, and feature requests.">
+  <meta name="description" content="Support page for Musaic Player — help, bug reports, and feature requests from Solder3t.">
+  <meta name="theme-color" content="#0a0a0f">
   <title>Support — Musaic Player | Solder3t</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
   <style>
-    :root {
-      --bg: #f6efe5;
-      --paper: #fffdf9;
-      --ink: #152132;
-      --muted: #4f5f73;
-      --line: #d9ccba;
-      --accent: #0f3d3e;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: radial-gradient(circle at 10% 0%, #fff4de 0, transparent 44%), var(--bg);
-      color: var(--ink);
-      font-family: "Manrope", sans-serif;
-      line-height: 1.6;
-    }
-
-    main {
-      width: min(850px, calc(100% - 2rem));
-      margin: 2rem auto;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 1.5rem 2rem;
-    }
-
-    h1, h2 {
-      font-family: "Space Grotesk", sans-serif;
-      line-height: 1.2;
-    }
-
-    h1 { margin-top: 0.5rem; }
-    h2 { margin-top: 1.6rem; }
-
-    p, li {
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .toplink {
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: 0.3rem; }
-
-    code {
-      background: #eee8dd;
-      padding: 0.15em 0.4em;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      main { padding: 1.2rem; }
-    }
+    .page-content { max-width: 800px; margin: 0 auto; padding: 120px 0 80px; }
+    .page-back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; transition: color 0.2s ease; }
+    .page-back:hover { color: var(--text); }
+    .page-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .page-meta { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2.5rem; }
+    .page-body h2 { font-size: 1.2rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.6rem; }
+    .page-body p, .page-body li { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
+    .page-body ul { padding-left: 1.25rem; }
+    .page-body li { margin-bottom: 0.4rem; }
+    .page-body a { color: var(--accent-light); text-decoration: none; font-weight: 500; }
+    .page-body a:hover { color: var(--accent); }
+    .page-body code { background: var(--bg-card); border: 1px solid var(--border); padding: 0.15em 0.45em; border-radius: 6px; font-family: var(--font-mono); font-size: 0.85em; color: var(--text); }
+    .page-body strong { color: var(--text); font-weight: 600; }
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem; }
+    .faq-item h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+    .faq-item p { font-size: 0.9rem; }
+    @media (max-width: 600px) { .page-content { padding: 100px 0 60px; } }
   </style>
 </head>
 <body>
-  <main>
-    <a class="toplink" href="../index.html">&larr; Back to Home</a>
-    <h1>Support</h1>
-    <p>Last updated: March 21, 2026</p>
-    <p>Public URL: <a href="https://solder3t.github.io/pages/support.html">https://solder3t.github.io/pages/support.html</a></p>
+  <div class="mesh-bg" aria-hidden="true"><div class="mesh-orb mesh-orb--1"></div><div class="mesh-orb mesh-orb--2"></div></div>
+  <div class="grain" aria-hidden="true"></div>
 
-    <p>
-      This is the official support page for <strong>Musaic Player</strong> (<code>com.musaic.mp</code>),
-      developed by Solder3t. If you encounter a bug, crash, or unexpected behavior, please reach
-      out using the contact information below.
-    </p>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="logo" href="../index.html" aria-label="Solder3t Home">
+        <span class="logo-mark"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="url(#lg)"/><path d="M8 14.5C8 12 10 10 13 10C15.5 10 17 11.5 17 13.5C17 15.5 15.5 16.5 13 17C10.5 17.5 9 18.5 9 20.5C9 22.5 10.5 24 13 24C15.5 24 17 22.5 17 21" stroke="white" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg></span>
+        <span class="logo-text">Solder3t</span>
+      </a>
+      <nav class="nav"><a href="../index.html#work" class="nav-link">Work</a><a href="../index.html#about" class="nav-link">About</a><a href="support.html" class="nav-link">Support</a><a href="privacy.html" class="nav-link">Privacy</a><a href="terms.html" class="nav-link">Terms</a></nav>
+    </div>
+  </header>
 
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a></p>
-    <p>
-      We aim to respond within 48 hours on business days. For faster resolution, please include
-      the details listed below.
-    </p>
+  <main class="page-content">
+    <a class="page-back" href="../index.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Home</a>
+    <h1 class="page-title">Support</h1>
+    <p class="page-meta">Last updated: April 5, 2026</p>
 
-    <h2>When Reporting a Bug, Please Include</h2>
-    <ul>
-      <li><strong>App version</strong> — visible in <em>Settings → About Musaic Player</em></li>
-      <li><strong>Device model</strong> (e.g., Pixel 8 Pro, Samsung Galaxy S24)</li>
-      <li><strong>Android version</strong> (e.g., Android 15)</li>
-      <li><strong>Steps to reproduce</strong> the issue</li>
-      <li><strong>Screenshots or screen recordings</strong> if applicable</li>
-    </ul>
+    <div class="page-body">
+      <p>This is the official support page for <strong>Musaic Player</strong> (<code>com.musaic.mp</code>), developed by Solder3t. If you encounter a bug, crash, or unexpected behavior, please reach out using the contact information below.</p>
 
-    <h2>Feature Requests</h2>
-    <p>
-      Have an idea for a feature? We'd love to hear it! Use the same email address above and
-      prefix your subject line with <strong>[Feature Request]</strong>.
-    </p>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:sold3vs@gmail.com">sold3vs@gmail.com</a></p>
+      <p>We aim to respond within 48 hours on business days. For faster resolution, please include the details listed below.</p>
 
-    <h2>Frequently Asked Questions</h2>
+      <h2>When Reporting a Bug</h2>
+      <ul>
+        <li><strong>App version</strong> — visible in <em>Settings → About Musaic Player</em></li>
+        <li><strong>Device model</strong> (e.g., Pixel 8 Pro, Samsung Galaxy S24)</li>
+        <li><strong>Android version</strong> (e.g., Android 15)</li>
+        <li><strong>Steps to reproduce</strong> the issue</li>
+        <li><strong>Screenshots or screen recordings</strong> if applicable</li>
+      </ul>
 
-    <h2 style="font-size:1rem; margin-top:1rem;">Why can't Musaic find my music files?</h2>
-    <p>
-      Make sure you've granted the <strong>Audio permission</strong> during onboarding or in
-      <em>Settings → Permissions</em>. If you selected a specific scan folder, ensure your
-      music files are inside that folder.
-    </p>
+      <h2>Feature Requests</h2>
+      <p>Have an idea for a feature? Use the same email address and prefix your subject line with <strong>[Feature Request]</strong>.</p>
 
-    <h2 style="font-size:1rem; margin-top:1rem;">How do I enable Online Lyrics?</h2>
-    <p>
-      Go to <em>Settings → Behavior → Online Lyrics</em> and toggle it on. This sends the
-      current song's title, artist, and duration to lyric services. See our
-      <a href="privacy.html">Privacy Policy</a> for details.
-    </p>
+      <h2>Frequently Asked Questions</h2>
 
-    <h2>Useful Links</h2>
-    <p><a href="privacy.html">Privacy Policy</a></p>
-    <p><a href="terms.html">Terms of Service</a></p>
-    <p><a href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub Profile</a></p>
+      <div class="faq-item">
+        <h3>Why can't Musaic find my music files?</h3>
+        <p>Make sure you've granted the <strong>Audio permission</strong> during onboarding or in <em>Settings → Permissions</em>. If you selected a specific scan folder, ensure your music files are inside that folder.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I enable Online Lyrics?</h3>
+        <p>Go to <em>Settings → Behavior → Online Lyrics</em> and toggle it on. This sends the current song's title, artist, and duration to lyric services. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I edit track metadata?</h3>
+        <p>Long-press any track in your library, then select <em>Edit Properties</em>. Changes are written to the audio file's ID3 tags and will survive library rescans.</p>
+      </div>
+
+      <h2>Useful Links</h2>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms of Service</a></p>
+      <p><a href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub Profile</a></p>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="footer-logo">Solder3t</span><p class="footer-tagline">Building Android apps that respect your privacy.</p></div>
+      <div class="footer-links"><a href="https://github.com/solder3t" target="_blank" rel="noreferrer">GitHub</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div>
+      <p class="footer-copy">&copy; <span id="year"></span> Solder3t. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
 </body>
 </html>
