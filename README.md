@@ -1,12 +1,12 @@
 # Soldevs Website
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen?style=for-the-badge)](https://soldevs.io)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen?style=for-the-badge)](https://solder3t.github.io)
 [![License](https://img.shields.io/badge/license-none-lightgrey?style=for-the-badge)](#license)
 [![Static Site](https://img.shields.io/badge/site-static-orange?style=for-the-badge)](#local-preview)
 
-The public home of **Soldevs**, an independent Android development studio focused on clean, practical apps.
+The public home of **Solder3t**, an independent Android development studio focused on clean, practical apps.
 
-Website: [soldevs.io](https://soldevs.io)
+Website: [solder3t.github.io](https://solder3t.github.io)
 
 This site acts as a lightweight portfolio and publishing hub:
 
@@ -51,15 +51,14 @@ http://localhost:8000
 
 ## Publishing
 
-This repository is set up as a GitHub Pages site with a custom domain. After pushing changes, GitHub Pages can serve the contents of this repository directly.
+This repository is set up as a GitHub Pages site using the default GitHub Pages domain. After pushing changes, GitHub Pages can serve the contents of this repository directly.
 
 If you are using GitHub Pages:
 
 - point Pages at the repository root
 - leave the source as the main branch or your preferred deployment branch
 - ensure `index.html` remains at the top level so the homepage resolves correctly
-- keep the root `CNAME` file set to `soldevs.io`
-- configure DNS for `soldevs.io` to point at GitHub Pages before expecting the custom domain to resolve
+- no custom domain or DNS setup is required while using the default GitHub Pages URL
 
 ## Notes
 
