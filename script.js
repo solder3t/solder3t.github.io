@@ -9,7 +9,7 @@ const apps = [
     category: "Music & Audio",
     description: "High-fidelity offline music player with AI-powered lyric romanization, smart playlists, and a gorgeous Material You interface. No ads, no accounts, no tracking.",
     appId: "com.musaic.mp",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.musaic.mp&pli=1",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.musaic.mp",
     githubUrl: "https://github.com/solder3t/musaic-player",
     status: "live", // "rc" or "live"
     statusText: "Live on Google Play"
