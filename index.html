@@ -115,14 +115,19 @@
       <!-- Terminal widget installer box -->
       <div class="terminal-widget">
         <div class="terminal-header">
-          <span class="terminal-dot terminal-dot--red"></span>
-          <span class="terminal-dot terminal-dot--yellow"></span>
-          <span class="terminal-dot terminal-dot--green"></span>
-          <span class="terminal-title">linux-setup installer</span>
+          <div class="terminal-dots">
+            <span class="terminal-dot terminal-dot--red"></span>
+            <span class="terminal-dot terminal-dot--yellow"></span>
+            <span class="terminal-dot terminal-dot--green"></span>
+          </div>
+          <div class="terminal-tabs">
+            <button class="terminal-tab active" data-cmd="curl -fsSL https://solder3t.github.io/linsetup | bash" data-comment="# Run one-line setup installer">linux-setup</button>
+            <button class="terminal-tab" data-cmd="curl -fsSL https://solder3t.github.io/android-studio-installer | sh" data-comment="# Install Android Studio via oneliner">android-studio</button>
+          </div>
         </div>
         <div class="terminal-body">
           <div class="terminal-prompt-line">
-            <span class="terminal-prompt">solder3t@linux:~$</span> <span class="terminal-comment-line"># Run one-line setup installer</span>
+            <span class="terminal-prompt">solder3t@linux:~$</span> <span class="terminal-comment-line" id="setupComment"># Run one-line setup installer</span>
           </div>
           <div class="terminal-command-container">
             <code class="terminal-command" id="setupCommand">curl -fsSL https://solder3t.github.io/linsetup | bash</code>

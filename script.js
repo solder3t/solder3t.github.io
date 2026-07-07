@@ -242,6 +242,28 @@ function initCopyInstaller() {
   });
 }
 
+// ── Terminal Tabs Switching ──
+function initTerminalTabs() {
+  const tabs = document.querySelectorAll(".terminal-tab");
+  const commandText = document.getElementById("setupCommand");
+  const commentText = document.getElementById("setupComment");
+
+  if (!tabs.length || !commandText || !commentText) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      tabs.forEach((t) => t.classList.remove("active"));
+      // Add active class to clicked tab
+      tab.classList.add("active");
+
+      // Update content
+      commandText.innerText = tab.getAttribute("data-cmd");
+      commentText.innerText = tab.getAttribute("data-comment");
+    });
+  });
+}
+
 // ── Init ──
 document.addEventListener("DOMContentLoaded", () => {
   renderApps();
@@ -252,5 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initSmoothScroll();
   initCopyInstaller();
+  initTerminalTabs();
   setYear();
 });

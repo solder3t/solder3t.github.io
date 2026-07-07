@@ -962,6 +962,11 @@ main {
   padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
+}
+
+.terminal-dots {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -975,13 +980,34 @@ main {
 .terminal-dot--yellow { background: #eab308; }
 .terminal-dot--green { background: #22c55e; }
 
-.terminal-title {
+.terminal-tabs {
+  display: flex;
+  gap: 0.35rem;
+  margin-left: 1.5rem;
+}
+
+.terminal-tab {
+  background: transparent;
+  border: 1px solid transparent;
   color: var(--text-dim);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
-  margin-left: auto;
-  margin-right: auto;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.terminal-tab:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.terminal-tab.active {
+  color: var(--accent-light);
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 .terminal-body {
