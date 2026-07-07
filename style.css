@@ -997,6 +997,7 @@ main {
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.2s ease;
+  outline: none;
 }
 
 .terminal-tab:hover {
@@ -1010,10 +1011,20 @@ main {
   border-color: rgba(99, 102, 241, 0.2);
 }
 
+.terminal-tab:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
 .terminal-body {
   padding: 1.5rem;
   font-size: 0.88rem;
   line-height: 1.6;
+}
+
+.terminal-body.switching .terminal-command,
+.terminal-body.switching .terminal-comment-line {
+  opacity: 0;
 }
 
 .terminal-prompt-line {
@@ -1029,6 +1040,7 @@ main {
 .terminal-comment-line {
   color: var(--text-dim);
   user-select: none;
+  transition: opacity 0.15s ease;
 }
 
 .terminal-command-container {
@@ -1046,6 +1058,7 @@ main {
   margin-right: 1rem;
   word-break: break-all;
   font-size: 0.9rem;
+  transition: opacity 0.15s ease;
 }
 
 .terminal-copy-btn {

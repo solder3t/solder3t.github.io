@@ -247,19 +247,32 @@ function initTerminalTabs() {
   const tabs = document.querySelectorAll(".terminal-tab");
   const commandText = document.getElementById("setupCommand");
   const commentText = document.getElementById("setupComment");
+  const terminalBody = document.querySelector(".terminal-body");
 
-  if (!tabs.length || !commandText || !commentText) return;
+  if (!tabs.length || !commandText || !commentText || !terminalBody) return;
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      // Remove active class from all tabs
-      tabs.forEach((t) => t.classList.remove("active"));
-      // Add active class to clicked tab
-      tab.classList.add("active");
+      if (tab.classList.contains("active")) return;
 
-      // Update content
-      commandText.innerText = tab.getAttribute("data-cmd");
-      commentText.innerText = tab.getAttribute("data-comment");
+      // Remove active class and set aria-selected to false for all tabs
+      tabs.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+
+      // Add active class and set aria-selected to true for the clicked tab
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+
+      // Apply switching class for fade micro-animation
+      terminalBody.classList.add("switching");
+
+      setTimeout(() => {
+        commandText.innerText = tab.getAttribute("data-cmd");
+        commentText.innerText = tab.getAttribute("data-comment");
+        terminalBody.classList.remove("switching");
+      }, 150);
     });
   });
 }

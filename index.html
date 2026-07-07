@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.0.1">
+  <link rel="stylesheet" href="style.css?v=1.0.2">
 </head>
 <body>
   <!-- Animated mesh gradient background -->
@@ -120,9 +120,9 @@
             <span class="terminal-dot terminal-dot--yellow"></span>
             <span class="terminal-dot terminal-dot--green"></span>
           </div>
-          <div class="terminal-tabs">
-            <button class="terminal-tab active" data-cmd="curl -fsSL https://solder3t.github.io/linsetup | bash" data-comment="# Run one-line setup installer">linux-setup</button>
-            <button class="terminal-tab" data-cmd="curl -fsSL https://solder3t.github.io/android-studio-installer | sh" data-comment="# Install Android Studio via oneliner">android-studio</button>
+          <div class="terminal-tabs" role="tablist" aria-label="Installer command options">
+            <button class="terminal-tab active" role="tab" aria-selected="true" aria-controls="setupCommand" id="tab-linux-setup" data-cmd="curl -fsSL https://solder3t.github.io/linsetup | bash" data-comment="# Run one-line setup installer">linux-setup</button>
+            <button class="terminal-tab" role="tab" aria-selected="false" aria-controls="setupCommand" id="tab-android-studio" data-cmd="curl -fsSL https://solder3t.github.io/android-studio-installer | sh" data-comment="# Install Android Studio via oneliner">android-studio</button>
           </div>
         </div>
         <div class="terminal-body">
@@ -254,6 +254,6 @@
     Installer command copied!
   </div>
 
-  <script src="script.js?v=1.0.1"></script>
+  <script src="script.js?v=1.0.2"></script>
 </body>
 </html>
