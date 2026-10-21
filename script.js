@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   Solder3t — Interactive Scripts
+   Solder3t — Interactive Scripts v2
    ═══════════════════════════════════════ */
 
 // ── App Data ──
@@ -12,7 +12,8 @@ const apps = [
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.musaic.mp",
     githubUrl: "https://github.com/solder3t/musaic-player",
     status: "live", // "rc" or "live"
-    statusText: "Live on Google Play"
+    statusText: "Live on Google Play",
+    tags: ["Kotlin", "Jetpack Compose", "Material You"]
   },
   {
     name: "Linux Setup",
@@ -22,7 +23,8 @@ const apps = [
     playStoreUrl: "",
     githubUrl: "https://github.com/solder3t/linux-setup",
     status: "live",
-    statusText: "Ready for use"
+    statusText: "Ready for use",
+    tags: ["Bash", "Shell", "Linux"]
   }
 ];
 
@@ -31,12 +33,13 @@ function renderApps() {
   const grid = document.getElementById("app-grid");
   if (!grid) return;
 
-  apps.forEach((app) => {
+  apps.forEach((app, index) => {
     const card = document.createElement("article");
     card.className = "app-card";
+    card.setAttribute("data-card-index", index);
 
     const statusClass = app.status === "live" ? "app-card-status--live" : "app-card-status--rc";
-    
+
     let cta = "";
     if (app.playStoreUrl) {
       cta = `<a class="btn btn--primary" href="${app.playStoreUrl}" target="_blank" rel="noreferrer">Play Store</a>`;
@@ -53,6 +56,11 @@ function renderApps() {
          </a>`
       : "";
 
+    // Build tech tags HTML
+    const tagsHtml = app.tags && app.tags.length
+      ? `<div class="app-card-tags">${app.tags.map(t => `<span class="app-tag">${t}</span>`).join("")}</div>`
+      : "";
+
     card.innerHTML = `
       <p class="app-card-meta">${app.category}</p>
       <h3>${app.name}</h3>
@@ -66,8 +74,115 @@ function renderApps() {
         ${cta}
         ${githubBtn}
       </div>
+      ${tagsHtml}
     `;
     grid.appendChild(card);
+  });
+}
+
+// ── Language Color Map ──
+const langColors = {
+  "Kotlin": "#A97BFF",
+  "JavaScript": "#F7DF1E",
+  "TypeScript": "#3178C6",
+  "Shell": "#89E051",
+  "Python": "#3572A5",
+  "HTML": "#E44D26",
+  "CSS": "#563D7C",
+  "Ruby": "#CC342D",
+  "Go": "#00ADD8",
+  "Rust": "#DEA584",
+};
+
+// ── Time Ago Helper ──
+function timeAgo(dateStr) {
+  if (!dateStr) return "";
+  const now = new Date();
+  const then = new Date(dateStr);
+  const diffMs = now - then;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+  if (diffDays === 0) return "Updated today";
+  if (diffDays === 1) return "Updated 1 day ago";
+  if (diffDays < 30) return `Updated ${diffDays} days ago`;
+
+  const diffMonths = Math.floor(diffDays / 30);
+  if (diffMonths === 1) return "Updated 1 month ago";
+  if (diffMonths < 12) return `Updated ${diffMonths} months ago`;
+
+  const diffYears = Math.floor(diffMonths / 12);
+  if (diffYears === 1) return "Updated 1 year ago";
+  return `Updated ${diffYears} years ago`;
+}
+
+// ── Curated Fallback Projects (Rate limit & offline resilience) ──
+const fallbackRepos = [
+  {
+    name: "musaic-player",
+    description: "High-fidelity offline music player for Android with synced lyrics, AI romanization, and Material You design.",
+    html_url: "https://github.com/solder3t/musaic-player",
+    language: "Kotlin",
+    stargazers_count: 12,
+    updated_at: "2026-08-15T12:00:00Z"
+  },
+  {
+    name: "linux-setup",
+    description: "Automated developer workspace bootstrapping utility for Linux with an interactive TUI installer.",
+    html_url: "https://github.com/solder3t/linux-setup",
+    language: "Shell",
+    stargazers_count: 5,
+    updated_at: "2026-09-01T10:00:00Z"
+  },
+  {
+    name: "solder3t.github.io",
+    description: "Personal developer portfolio and project showcase with terminal utilities and privacy policies.",
+    html_url: "https://github.com/solder3t/solder3t.github.io",
+    language: "HTML",
+    stargazers_count: 2,
+    updated_at: "2026-10-17T03:55:00Z"
+  }
+];
+
+function renderRepoCards(container, repos) {
+  container.innerHTML = "";
+  repos.forEach((repo) => {
+    const card = document.createElement("article");
+    card.className = "project-card";
+
+    // Language indicator
+    const langColor = repo.language ? (langColors[repo.language] || "#8a8a9a") : null;
+    const langHtml = repo.language
+      ? `<span class="project-lang">
+           <span class="project-lang-dot" style="background:${langColor}"></span>
+           ${repo.language}
+         </span>`
+      : "";
+
+    // Star count
+    const starsHtml = (repo.stargazers_count > 0)
+      ? `<span class="project-stars">⭐ ${repo.stargazers_count}</span>`
+      : "";
+
+    // Last updated
+    const updatedHtml = repo.updated_at
+      ? `<span class="project-updated">${timeAgo(repo.updated_at)}</span>`
+      : "";
+
+    const metaHtml = (langHtml || starsHtml)
+      ? `<div class="project-card-meta">${langHtml}${starsHtml}</div>`
+      : "";
+
+    card.innerHTML = `
+      <h3>${repo.name}</h3>
+      <p>${repo.description || "No description provided."}</p>
+      ${metaHtml}
+      ${updatedHtml ? `<p class="project-updated" style="margin-bottom:0.75rem">${timeAgo(repo.updated_at)}</p>` : ""}
+      <a href="${repo.html_url}" target="_blank" rel="noreferrer">
+        View repository
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3H4a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1v-2M11 1h4v4M6 10l9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    `;
+    container.appendChild(card);
   });
 }
 
@@ -76,32 +191,57 @@ async function loadGitHubProjects() {
   const container = document.getElementById("github-projects");
   if (!container) return;
 
+  const CACHE_KEY = "solder3t_github_repos_v2";
+  const CACHE_TIME_KEY = "solder3t_github_repos_time_v2";
+  const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour cache
+
+  // Check valid cache first to save rate limits
+  try {
+    const cachedData = localStorage.getItem(CACHE_KEY);
+    const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
+    if (cachedData && cachedTime && (Date.now() - Number(cachedTime) < CACHE_TTL_MS)) {
+      const parsed = JSON.parse(cachedData);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        renderRepoCards(container, parsed);
+        return;
+      }
+    }
+  } catch (e) {
+    // localStorage not accessible or corrupted, continue to fetch
+  }
+
   try {
     const response = await fetch("https://api.github.com/users/solder3t/repos?sort=updated&per_page=6");
+    if (!response.ok) throw new Error(`HTTP error ${response.status}`);
     const data = await response.json();
     const repos = Array.isArray(data) ? data : [];
 
-    if (!repos.length) {
-      container.innerHTML = '<p style="color:var(--text-muted)">No public repositories yet.</p>';
+    if (repos.length > 0) {
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify(repos));
+        localStorage.setItem(CACHE_TIME_KEY, String(Date.now()));
+      } catch (e) {}
+      renderRepoCards(container, repos);
       return;
     }
-
-    repos.forEach((repo) => {
-      const card = document.createElement("article");
-      card.className = "project-card";
-      card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description || "No description provided."}</p>
-        <a href="${repo.html_url}" target="_blank" rel="noreferrer">
-          View repository
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3H4a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1v-2M11 1h4v4M6 10l9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      `;
-      container.appendChild(card);
-    });
-  } catch {
-    container.innerHTML = '<p style="color:var(--text-muted)">Could not load projects right now.</p>';
+  } catch (err) {
+    console.warn("GitHub API rate limited or unreachable. Using fallback.", err);
   }
+
+  // Fallback 1: use stale cached data if present
+  try {
+    const staleData = localStorage.getItem(CACHE_KEY);
+    if (staleData) {
+      const parsed = JSON.parse(staleData);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        renderRepoCards(container, parsed);
+        return;
+      }
+    }
+  } catch (e) {}
+
+  // Fallback 2: render curated fallback repos
+  renderRepoCards(container, fallbackRepos);
 }
 
 // ── Scroll Reveal ──
@@ -214,7 +354,7 @@ function initCopyInstaller() {
   copyBtn.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(commandText.innerText);
-      
+
       // Update button visual state
       copyBtn.classList.add("copied");
       const originalSvg = copyBtn.innerHTML;
@@ -235,7 +375,7 @@ function initCopyInstaller() {
       setTimeout(() => {
         toast.classList.remove("show");
       }, 3000);
-      
+
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }

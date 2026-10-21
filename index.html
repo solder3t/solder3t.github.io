@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.0.3">
+  <link rel="stylesheet" href="style.css?v=2.0.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
@@ -78,41 +78,66 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero" data-reveal>
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Tech Enthusiast & Creator
-      </div>
-      <h1 class="hero-title">
-        <span class="hero-title-line">Building apps and tools</span>
-        <span class="hero-title-line hero-title-line--accent">to my own taste.</span>
-      </h1>
-      <p class="hero-subtitle">
-        Hi, I'm Solder3t. I build apps and tools for fun, crafting the exact features I want for my Android apps and Linux workspace setup.
-      </p>
-      <div class="hero-ctas">
-        <a href="#work" class="btn btn--primary">
-          <span>See Featured Projects</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="https://github.com/solder3t" target="_blank" rel="noreferrer" class="btn btn--ghost">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub Profile</span>
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-value">Kotlin</span>
-          <span class="stat-label">Android Stack</span>
+      <div class="hero-layout">
+        <!-- LEFT: main content -->
+        <div class="hero-main">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span class="badge-code">~/projects</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="hero-title-line">Building apps and tools</span>
+            <span class="hero-title-line hero-title-line--accent">I actually want to use.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Hi, I'm Solder3t. I build apps and tools for fun, crafting the exact features I want for my Android apps and Linux workspace setup.
+          </p>
+          <div class="hero-ctas">
+            <a href="#work" class="btn btn--primary">
+              <span>See Featured Projects</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://github.com/solder3t" target="_blank" rel="noreferrer" class="btn btn--ghost">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub Profile</span>
+            </a>
+          </div>
+
+          <!-- Currently working on widget -->
+          <div class="hero-wip">
+            <span class="hero-wip-dot"></span>
+            <span class="hero-wip-label">Currently working on</span>
+            <a href="#work" class="hero-wip-link">Musaic Player v2</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-value">Kotlin</span>
+              <span class="stat-label">Android Stack</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-value">Linux</span>
+              <span class="stat-label">Setup Script</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-value">Zero</span>
+              <span class="stat-label">Trackers or Ads</span>
+            </div>
+          </div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-value">Linux</span>
-          <span class="stat-label">Setup Script</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-value">Zero</span>
-          <span class="stat-label">Trackers or Ads</span>
+
+        <!-- RIGHT: personality pills -->
+        <div class="hero-pills" aria-hidden="true">
+          <span class="hero-pill hero-pill--green">🤖 Kotlin</span>
+          <span class="hero-pill hero-pill--blue">🐧 Linux</span>
+          <span class="hero-pill hero-pill--yellow">⚡ Bash</span>
+          <span class="hero-pill hero-pill--purple">🎵 Musaic</span>
+          <span class="hero-pill hero-pill--teal">🔒 Privacy</span>
+          <span class="hero-pill hero-pill--green">📱 Android</span>
+          <span class="hero-pill hero-pill--blue">🛠 Arch</span>
+          <span class="hero-pill hero-pill--purple">✨ Material You</span>
         </div>
       </div>
 
@@ -181,27 +206,40 @@
           </p>
         </div>
         <div class="about-values">
-          <div class="value-card">
+          <div class="value-card value-card--privacy">
             <div class="value-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
             </div>
             <h3>Privacy First</h3>
             <p>No accounts, no trackers, no analytics. Your data stays on your device.</p>
           </div>
-          <div class="value-card">
+          <div class="value-card value-card--perf">
             <div class="value-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <h3>Performance</h3>
             <p>Buttery smooth 60fps, instant startup, and offline-first architecture.</p>
           </div>
-          <div class="value-card">
+          <div class="value-card value-card--stack">
             <div class="value-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
             <h3>Modern Stack</h3>
             <p>Jetpack Compose, Kotlin, bash scripting, and shell integration for rapid dev loop.</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Tech shelf -->
+      <div class="tech-shelf">
+        <span class="tech-shelf-label">Currently using</span>
+        <div class="tech-shelf-pills">
+          <span class="tech-pill">Kotlin</span>
+          <span class="tech-pill">Jetpack Compose</span>
+          <span class="tech-pill">Room DB</span>
+          <span class="tech-pill">ExoPlayer</span>
+          <span class="tech-pill">Bash</span>
+          <span class="tech-pill">Arch Linux</span>
         </div>
       </div>
     </section>
@@ -240,6 +278,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
+      <div class="footer-wordmark" aria-hidden="true">SOLDER3T</div>
       <div class="footer-brand">
         <span class="footer-logo">Solder3t</span>
         <p class="footer-tagline">Crafting clean apps and custom developer setups.</p>
@@ -259,6 +298,6 @@
     Installer command copied!
   </div>
 
-  <script src="script.js?v=1.0.3"></script>
+  <script src="script.js?v=2.0.0"></script>
 </body>
 </html>
