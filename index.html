@@ -52,8 +52,9 @@
 
       <nav class="nav" aria-label="Primary">
         <a href="#work" class="nav-link">Work</a>
+        <a href="#tools" class="nav-link">Tools</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="pages/support.html" class="nav-link">Support</a>
+        <a href="#support" class="nav-link">Support</a>
         <a href="pages/privacy.html" class="nav-link">Privacy</a>
         <a href="pages/terms.html" class="nav-link">Terms</a>
       </nav>
@@ -69,8 +70,9 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#work" class="mobile-menu-link">Work</a>
+    <a href="#tools" class="mobile-menu-link">Tools</a>
     <a href="#about" class="mobile-menu-link">About</a>
-    <a href="pages/support.html" class="mobile-menu-link">Support</a>
+    <a href="#support" class="mobile-menu-link">Support</a>
     <a href="pages/privacy.html" class="mobile-menu-link">Privacy</a>
     <a href="pages/terms.html" class="mobile-menu-link">Terms</a>
   </div>
@@ -186,6 +188,88 @@
       <div class="app-grid" id="app-grid"></div>
     </section>
 
+    <!-- Developer Tools & CLI Scripts -->
+    <section id="tools" class="section section--tools" data-reveal>
+      <div class="section-header">
+        <span class="section-tag">Dev Workstation</span>
+        <h2>Developer Tooling &amp; Scripts</h2>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-icon">⚡</div>
+            <div class="tool-meta">
+              <h3>linux-setup</h3>
+              <span class="tool-badge">TUI Bootstrapper</span>
+            </div>
+          </div>
+          <p class="tool-desc">
+            Complete Arch &amp; Debian workspace setup: installs zsh, starship, neovim, dev compilers, and custom dotfiles in seconds.
+          </p>
+          <div class="tool-command-box">
+            <code>curl -fsSL https://solder3t.github.io/linsetup | bash</code>
+            <button class="tool-copy-btn" data-copy="curl -fsSL https://solder3t.github.io/linsetup | bash" aria-label="Copy linsetup command">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+          <div class="tool-footer">
+            <span class="tool-tag">Bash 5.0+</span>
+            <span class="tool-tag">Zero Risk</span>
+            <a href="https://github.com/solder3t/linux-setup" target="_blank" rel="noreferrer" class="tool-link">View Script &rarr;</a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-icon">📱</div>
+            <div class="tool-meta">
+              <h3>android-studio</h3>
+              <span class="tool-badge">SDK Automation</span>
+            </div>
+          </div>
+          <p class="tool-desc">
+            One-shot setup script to fetch the latest official Android Studio release, extract to /opt, setup desktop entry, and configure PATH.
+          </p>
+          <div class="tool-command-box">
+            <code>curl -fsSL https://solder3t.github.io/android-studio-installer | sh</code>
+            <button class="tool-copy-btn" data-copy="curl -fsSL https://solder3t.github.io/android-studio-installer | sh" aria-label="Copy android studio installer command">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+          <div class="tool-footer">
+            <span class="tool-tag">Android SDK</span>
+            <span class="tool-tag">Desktop File</span>
+            <a href="https://github.com/solder3t/solder3t.github.io/blob/main/android-studio-installer" target="_blank" rel="noreferrer" class="tool-link">View Script &rarr;</a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-card-top">
+            <div class="tool-icon">🚀</div>
+            <div class="tool-meta">
+              <h3>antigravity</h3>
+              <span class="tool-badge">AI CLI Agent</span>
+            </div>
+          </div>
+          <p class="tool-desc">
+            Installs and maintains the Antigravity agent CLI environment with sandboxing, shell integration, and automatic tool updates.
+          </p>
+          <div class="tool-command-box">
+            <code>curl -fsSL https://solder3t.github.io/antigravity-installer | sh</code>
+            <button class="tool-copy-btn" data-copy="curl -fsSL https://solder3t.github.io/antigravity-installer | sh" aria-label="Copy antigravity installer command">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+          <div class="tool-footer">
+            <span class="tool-tag">CLI Agent</span>
+            <span class="tool-tag">Shell Hooks</span>
+            <a href="https://github.com/solder3t/solder3t.github.io/blob/main/antigravity-installer" target="_blank" rel="noreferrer" class="tool-link">View Script &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- GitHub Projects -->
     <section id="projects" class="section" data-reveal>
       <div class="section-header">
@@ -249,31 +333,67 @@
       </div>
     </section>
 
-    <!-- Support -->
+    <!-- Support & Transparency Hub -->
     <section id="support" class="section section--support" data-reveal>
       <div class="section-header">
-        <span class="section-tag">Need Help?</span>
-        <h2>Support</h2>
+        <span class="section-tag">Help &amp; Transparency</span>
+        <h2>Support &amp; Inquiries</h2>
       </div>
       <div class="support-cards">
         <article class="support-card">
+          <span class="support-card-tag">Direct Contact</span>
           <div class="support-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <h3>Email Support</h3>
-          <p>For bugs, feature requests, or anything else:</p>
-          <a href="mailto:sold3vs@gmail.com" class="support-link">sold3vs@gmail.com</a>
+          <h3>Developer Support</h3>
+          <p>Encountered a playback glitch, audio driver edge-case, or have a feature idea? Email me directly.</p>
+          <div class="support-channels">
+            <a href="mailto:sold3vs@gmail.com" class="support-channel-link">
+              <span>sold3vs@gmail.com</span>
+              <span class="support-badge-pill">48h response</span>
+            </a>
+            <a href="pages/support.html" class="support-channel-link">
+              <span>Bug Reporting Guide</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3H4a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1v-2M11 1h4v4M6 10l9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
         </article>
-        <article class="support-card">
+
+        <article class="support-card support-card--community">
+          <span class="support-card-tag">Community</span>
           <div class="support-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </div>
-          <h3>Policy URLs</h3>
-          <p>Use these in Google Play Console:</p>
-          <div class="policy-links">
-            <a href="https://solder3t.github.io/pages/privacy.html" class="policy-link">Privacy Policy</a>
-            <a href="https://solder3t.github.io/pages/support.html" class="policy-link">Support URL</a>
-            <a href="https://solder3t.github.io/pages/terms.html" class="policy-link">Terms of Service</a>
+          <h3>Discussions &amp; Chat</h3>
+          <p>Join the Telegram group for Musaic beta test builds, feature voting, and Linux workspace customization chats.</p>
+          <div class="support-channels">
+            <a href="https://telegram.me/musaicplayer" target="_blank" rel="noreferrer" class="support-channel-link">
+              <span>Telegram Group</span>
+              <span class="support-badge-pill" style="color:var(--accent-teal);border-color:rgba(6,182,212,0.3);background:rgba(6,182,212,0.1)">@musaicplayer</span>
+            </a>
+            <a href="https://github.com/solder3t" target="_blank" rel="noreferrer" class="support-channel-link">
+              <span>GitHub Discussions</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3H4a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1v-2M11 1h4v4M6 10l9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="support-card support-card--legal">
+          <span class="support-card-tag">Compliance &amp; Trust</span>
+          <div class="support-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3>Policy &amp; Terms Hub</h3>
+          <p>Read the transparent, plain-English legal policies for all published Android applications and web services.</p>
+          <div class="support-channels">
+            <a href="pages/privacy.html" class="support-channel-link">
+              <span>Privacy Policy</span>
+              <span class="support-badge-pill" style="color:var(--gold);border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.1)">Zero Trackers</span>
+            </a>
+            <a href="pages/terms.html" class="support-channel-link">
+              <span>Terms of Service</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3H4a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1v-2M11 1h4v4M6 10l9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         </article>
       </div>

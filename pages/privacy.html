@@ -38,8 +38,30 @@
     .page-meta {
       color: var(--text-dim);
       font-size: 0.85rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
+    .policy-trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .policy-pill--green { background: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.25); }
+    .policy-pill--teal { background: rgba(6, 182, 212, 0.1); color: var(--accent-teal); border: 1px solid rgba(6, 182, 212, 0.25); }
+    .policy-pill--purple { background: rgba(139, 92, 246, 0.1); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.25); }
+    .policy-pill--gold { background: rgba(245, 158, 11, 0.1); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.25); }
     .page-body h2 {
       font-size: 1.3rem;
       font-weight: 700;
@@ -115,13 +137,29 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="../index.html#work" class="nav-link">Work</a>
+        <a href="../index.html#tools" class="nav-link">Tools</a>
         <a href="../index.html#about" class="nav-link">About</a>
         <a href="support.html" class="nav-link">Support</a>
         <a href="privacy.html" class="nav-link">Privacy</a>
         <a href="terms.html" class="nav-link">Terms</a>
       </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html#work" class="mobile-menu-link">Work</a>
+    <a href="../index.html#tools" class="mobile-menu-link">Tools</a>
+    <a href="../index.html#about" class="mobile-menu-link">About</a>
+    <a href="support.html" class="mobile-menu-link">Support</a>
+    <a href="privacy.html" class="mobile-menu-link">Privacy</a>
+    <a href="terms.html" class="mobile-menu-link">Terms</a>
+  </div>
 
   <main class="page-content">
     <a class="page-back" href="../index.html">
@@ -130,6 +168,13 @@
     </a>
     <h1 class="page-title">Privacy Policy</h1>
     <p class="page-meta">Effective: March 22, 2026 · Last updated: April 5, 2026</p>
+
+    <div class="policy-trust-bar">
+      <span class="policy-pill policy-pill--green">🛡️ 100% Offline Architecture</span>
+      <span class="policy-pill policy-pill--teal">🔒 Zero Trackers or Ad SDKs</span>
+      <span class="policy-pill policy-pill--purple">📱 On-Device SQLite (Room)</span>
+      <span class="policy-pill policy-pill--gold">🔑 Keystore-Encrypted API Keys</span>
+    </div>
 
     <div class="page-body">
       <p>Public URL: <a href="https://solder3t.github.io/pages/privacy.html">https://solder3t.github.io/pages/privacy.html</a></p>
@@ -228,6 +273,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
+      <div class="footer-wordmark" aria-hidden="true">SOLDER3T</div>
       <div class="footer-brand">
         <span class="footer-logo">Solder3t</span>
         <p class="footer-tagline">Building Android apps that respect your privacy.</p>

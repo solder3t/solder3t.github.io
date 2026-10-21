@@ -6,25 +6,53 @@
 const apps = [
   {
     name: "Musaic Player",
-    category: "Music & Audio",
+    category: "Music & Audio · Android Native",
     description: "High-fidelity offline music player with AI-powered lyric romanization, smart playlists, and a gorgeous Material You interface. No ads, no accounts, no tracking.",
     appId: "com.musaic.mp",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.musaic.mp",
     githubUrl: "https://github.com/solder3t/musaic-player",
     status: "live", // "rc" or "live"
     statusText: "Live on Google Play",
-    tags: ["Kotlin", "Jetpack Compose", "Material You"]
+    badge: "v2.0 Production",
+    highlights: ["100% Offline First", "Zero Trackers / Ads", "Bit-Perfect Audio", "Material You 3"],
+    tags: ["Kotlin", "Jetpack Compose", "ExoPlayer", "Room DB"],
+    iconSvg: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="12" fill="url(#musaicGrad)"/>
+      <path d="M16 26V14l12-3v12" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="13" cy="26" r="3" fill="white"/>
+      <circle cx="25" cy="23" r="3" fill="white"/>
+      <defs>
+        <linearGradient id="musaicGrad" x1="0" y1="0" x2="40" y2="40">
+          <stop stop-color="#6366f1"/>
+          <stop offset="0.5" stop-color="#8b5cf6"/>
+          <stop offset="1" stop-color="#ec4899"/>
+        </linearGradient>
+      </defs>
+    </svg>`
   },
   {
     name: "Linux Setup",
     category: "System Utilities & Config",
-    description: "Automated developer workspace bootstrapping utility for Linux. Installs essential packages, dev tools, shells, and custom dotfiles with an interactive TUI installer.",
+    description: "Automated developer workspace bootstrapping utility for Linux. Installs essential packages, dev tools, modern shells, and custom dotfiles with an interactive TUI installer.",
     appId: "solder3t/linux-setup",
     playStoreUrl: "",
     githubUrl: "https://github.com/solder3t/linux-setup",
     status: "live",
     statusText: "Ready for use",
-    tags: ["Bash", "Shell", "Linux"]
+    badge: "CLI Utility",
+    highlights: ["Interactive TUI", "Arch & Debian", "One-Line Run", "Custom Dotfiles"],
+    tags: ["Bash", "Shell Scripting", "Linux CLI", "Automation"],
+    iconSvg: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="12" fill="url(#linuxGrad)"/>
+      <path d="M12 15l6 5-6 5" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 25h8" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="linuxGrad" x1="0" y1="0" x2="40" y2="40">
+          <stop stop-color="#0f172a"/>
+          <stop offset="1" stop-color="#1e293b"/>
+        </linearGradient>
+      </defs>
+    </svg>`
   }
 ];
 
@@ -42,9 +70,15 @@ function renderApps() {
 
     let cta = "";
     if (app.playStoreUrl) {
-      cta = `<a class="btn btn--primary" href="${app.playStoreUrl}" target="_blank" rel="noreferrer">Play Store</a>`;
+      cta = `<a class="btn btn--primary" href="${app.playStoreUrl}" target="_blank" rel="noreferrer">
+               <span>Get on Google Play</span>
+               <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+             </a>`;
     } else if (app.githubUrl) {
-      cta = `<a class="btn btn--primary" href="${app.githubUrl}" target="_blank" rel="noreferrer">GitHub Repo</a>`;
+      cta = `<a class="btn btn--primary" href="${app.githubUrl}" target="_blank" rel="noreferrer">
+               <span>Run Installer</span>
+               <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+             </a>`;
     } else {
       cta = `<span class="btn btn--disabled">Coming Soon</span>`;
     }
@@ -52,8 +86,20 @@ function renderApps() {
     const githubBtn = (app.githubUrl && app.playStoreUrl)
       ? `<a class="btn btn--ghost" href="${app.githubUrl}" target="_blank" rel="noreferrer">
            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-           Source
+           <span>Source</span>
          </a>`
+      : "";
+
+    // Feature highlights chips
+    const highlightsHtml = app.highlights && app.highlights.length
+      ? `<div class="app-card-highlights">
+           ${app.highlights.map(h => `
+             <span class="highlight-chip">
+               <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+               ${h}
+             </span>
+           `).join("")}
+         </div>`
       : "";
 
     // Build tech tags HTML
@@ -62,18 +108,36 @@ function renderApps() {
       : "";
 
     card.innerHTML = `
-      <p class="app-card-meta">${app.category}</p>
-      <h3>${app.name}</h3>
-      <p>${app.description}</p>
-      <p class="app-card-package">${app.appId}</p>
-      <span class="app-card-status ${statusClass}">
-        <span class="hero-badge-dot"></span>
-        ${app.statusText}
-      </span>
+      <div class="app-card-header">
+        <div class="app-card-icon-wrap">
+          ${app.iconSvg}
+        </div>
+        <div class="app-card-header-info">
+          <div class="app-card-badge-row">
+            <span class="app-card-meta">${app.category}</span>
+            <span class="app-version-badge">${app.badge}</span>
+          </div>
+          <h3 class="app-card-title">${app.name}</h3>
+        </div>
+      </div>
+
+      <p class="app-card-desc">${app.description}</p>
+
+      ${highlightsHtml}
+
+      <div class="app-card-footer-meta">
+        <span class="app-card-package"><code>${app.appId}</code></span>
+        <span class="app-card-status ${statusClass}">
+          <span class="hero-badge-dot"></span>
+          ${app.statusText}
+        </span>
+      </div>
+
       <div class="app-card-actions">
         ${cta}
         ${githubBtn}
       </div>
+
       ${tagsHtml}
     `;
     grid.appendChild(card);
@@ -343,42 +407,51 @@ function initSmoothScroll() {
   });
 }
 
-// ── Copy Installer Command ──
+// ── Copy Installer & Script Commands ──
 function initCopyInstaller() {
-  const copyBtn = document.getElementById("copyBtn");
-  const commandText = document.getElementById("setupCommand");
   const toast = document.getElementById("toast");
 
-  if (!copyBtn || !commandText || !toast) return;
-
-  copyBtn.addEventListener("click", async () => {
+  async function copyText(text, btnElement) {
+    if (!text) return;
     try {
-      await navigator.clipboard.writeText(commandText.innerText);
+      await navigator.clipboard.writeText(text);
 
-      // Update button visual state
-      copyBtn.classList.add("copied");
-      const originalSvg = copyBtn.innerHTML;
-      copyBtn.innerHTML = `
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-      `;
+      if (btnElement) {
+        btnElement.classList.add("copied");
+        const originalSvg = btnElement.innerHTML;
+        btnElement.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        `;
+        setTimeout(() => {
+          btnElement.classList.remove("copied");
+          btnElement.innerHTML = originalSvg;
+        }, 2000);
+      }
 
-      // Show toast
-      toast.classList.add("show");
-
-      setTimeout(() => {
-        copyBtn.classList.remove("copied");
-        copyBtn.innerHTML = originalSvg;
-      }, 2000);
-
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3000);
-
+      if (toast) {
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2500);
+      }
     } catch (err) {
-      console.error("Failed to copy text: ", err);
+      console.error("Failed to copy command: ", err);
     }
+  }
+
+  // Hero terminal copy button
+  const copyBtn = document.getElementById("copyBtn");
+  const commandText = document.getElementById("setupCommand");
+  if (copyBtn && commandText) {
+    copyBtn.addEventListener("click", () => copyText(commandText.innerText.trim(), copyBtn));
+  }
+
+  // Generic data-copy buttons (e.g. tools shelf)
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const text = btn.getAttribute("data-copy");
+      copyText(text, btn);
+    });
   });
 }
 
