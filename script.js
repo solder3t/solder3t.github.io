@@ -339,34 +339,6 @@ function initHeaderScroll() {
   }, { passive: true });
 }
 
-// ── Cursor Glow (Desktop) ──
-function initCursorGlow() {
-  const glow = document.querySelector(".cursor-glow");
-  if (!glow || window.matchMedia("(max-width: 768px)").matches) return;
-
-  let mouseX = 0, mouseY = 0;
-  let glowX = 0, glowY = 0;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    glow.classList.add("active");
-  });
-
-  document.addEventListener("mouseleave", () => {
-    glow.classList.remove("active");
-  });
-
-  function animate() {
-    glowX += (mouseX - glowX) * 0.08;
-    glowY += (mouseY - glowY) * 0.08;
-    glow.style.left = glowX + "px";
-    glow.style.top = glowY + "px";
-    requestAnimationFrame(animate);
-  }
-  animate();
-}
-
 // ── Mobile Menu ──
 function initMobileMenu() {
   const toggle = document.querySelector(".nav-toggle");
@@ -496,7 +468,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadGitHubProjects();
   initReveal();
   initHeaderScroll();
-  initCursorGlow();
   initMobileMenu();
   initSmoothScroll();
   initCopyInstaller();
