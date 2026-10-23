@@ -43,6 +43,63 @@
   color: white;
 }
 
+/* A consistent reading layout for policy and support pages. */
+.page-content {
+  width: min(100% - 2.5rem, 760px);
+}
+
+.page-title {
+  line-height: 1.08;
+  text-wrap: balance;
+  background: linear-gradient(110deg, #fff 20%, #c4b5fd 70%, #67e8f9);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.page-body h2 {
+  scroll-margin-top: 6rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border);
+}
+
+.page-body p,
+.page-body li {
+  max-width: 72ch;
+}
+
+.page-body a {
+  text-decoration: underline;
+  text-decoration-color: rgba(129, 140, 248, 0.35);
+  text-underline-offset: 3px;
+}
+
+.page-body a:hover {
+  text-decoration-color: currentColor;
+}
+
+.page-back {
+  min-height: 40px;
+  padding: 0.4rem 0.75rem;
+  margin-left: -0.75rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+}
+
+.page-back:hover {
+  border-color: var(--border);
+  background: var(--bg-card);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
