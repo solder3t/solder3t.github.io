@@ -2020,8 +2020,9 @@ main {
 .footer-wordmark { color: #182530; opacity: 0.035; }
 
 .theme-toggle {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   flex: 0 0 auto;
   display: inline-grid;
   place-items: center;
@@ -2043,6 +2044,14 @@ main {
 .theme-toggle:focus-visible {
   outline: 2px solid var(--accent-light);
   outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .header-inner { gap: 0.75rem; }
+  .theme-toggle {
+    margin-left: auto;
+    color: var(--text);
+  }
 }
 
 .theme-icon {
