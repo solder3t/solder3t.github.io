@@ -6,10 +6,18 @@
   <meta name="description" content="Support page for Musaic Player — help, bug reports, and feature requests from Solder3t.">
   <meta name="theme-color" content="#f4f2ec">
   <title>Support — Musaic Player | Solder3t</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=3.0.0">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('solder3t-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+      } catch (_) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="../style.css?v=4.0.0">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <style>
     .page-content { max-width: 800px; margin: 0 auto; padding: 120px 0 80px; }
@@ -60,6 +68,10 @@
         <a href="../index.html#about" class="nav-link">About</a>
         <a href="support.html" class="nav-link">Support</a>
       </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Enable dark mode" title="Enable dark mode" aria-pressed="false">
+        <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 15.4A8.4 8.4 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"/></svg>
+      </button>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="nav-toggle-line"></span>
         <span class="nav-toggle-line"></span>

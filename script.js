@@ -7,14 +7,14 @@ const apps = [
   {
     name: "Musaic Player",
     category: "Music & Audio · Android Native",
-    description: "High-fidelity offline music player with AI-powered lyric romanization, smart playlists, and a gorgeous Material You interface. No ads, no accounts, no tracking.",
+    description: "Ad-free Android player for your local music. Your library stays on device; optional lyrics, AI, and sync features connect when you use them.",
     appId: "com.musaic.mp",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.musaic.mp",
     githubUrl: "https://github.com/solder3t/musaic-player",
     status: "live", // "rc" or "live"
     statusText: "Live on Google Play",
-    badge: "v2.0 Production",
-    highlights: ["100% Offline First", "Zero Trackers / Ads", "Bit-Perfect Audio", "Material You 3"],
+    badge: "Android app",
+    highlights: ["Local music library", "Ad-free playback", "Optional online tools", "Material You design"],
     tags: ["Kotlin", "Jetpack Compose", "ExoPlayer", "Room DB"],
     iconSvg: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="40" height="40" rx="12" fill="url(#musaicGrad)"/>
@@ -462,6 +462,45 @@ function initTerminalTabs() {
   });
 }
 
+// ── Light / Dark Theme ──
+function initTheme() {
+  const root = document.documentElement;
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  const buttons = document.querySelectorAll("[data-theme-toggle]");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function applyTheme(theme, persist = false) {
+    const isDark = theme === "dark";
+    root.dataset.theme = isDark ? "dark" : "light";
+    if (metaThemeColor) metaThemeColor.setAttribute("content", isDark ? "#0d1117" : "#f4f2ec");
+    buttons.forEach((button) => {
+      const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+      button.setAttribute("aria-label", label);
+      button.setAttribute("title", label);
+      button.setAttribute("aria-pressed", String(isDark));
+    });
+    if (persist) {
+      try { localStorage.setItem("solder3t-theme", isDark ? "dark" : "light"); } catch (_) {}
+    }
+  }
+
+  let savedTheme = null;
+  try { savedTheme = localStorage.getItem("solder3t-theme"); } catch (_) {}
+  applyTheme(savedTheme || (systemTheme.matches ? "dark" : "light"));
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
+    });
+  });
+
+  systemTheme.addEventListener?.("change", (event) => {
+    let hasSavedTheme = false;
+    try { hasSavedTheme = Boolean(localStorage.getItem("solder3t-theme")); } catch (_) {}
+    if (!hasSavedTheme) applyTheme(event.matches ? "dark" : "light");
+  });
+}
+
 // ── Init ──
 document.addEventListener("DOMContentLoaded", () => {
   renderApps();
@@ -472,5 +511,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
   initCopyInstaller();
   initTerminalTabs();
+  initTheme();
   setYear();
 });
