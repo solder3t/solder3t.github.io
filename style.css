@@ -1948,7 +1948,7 @@ main {
 .nav-link { font-size: 0.86rem; }
 .nav-link::after { background: var(--accent); }
 .hero { padding-top: 156px; padding-bottom: 96px; }
-.hero-title { font-size: clamp(2.8rem, 5.3vw, 4.7rem); max-width: 12ch; line-height: 1.28; }
+.hero-title { font-size: clamp(2.8rem, 5.3vw, 4.7rem); max-width: 12ch; line-height: 1.32; }
 .hero-title-line--accent {
   background-image: linear-gradient(115deg, #455bd4, #16756f);
   padding-bottom: 0.1em;
