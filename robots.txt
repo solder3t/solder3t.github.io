@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solder3t.github.io/sitemap.xml
