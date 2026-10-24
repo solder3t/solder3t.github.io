@@ -503,6 +503,8 @@ function initTheme() {
 
 // ── Init ──
 document.addEventListener("DOMContentLoaded", () => {
+  // Wire the theme control before any page-specific initialization can fail.
+  initTheme();
   renderApps();
   loadGitHubProjects();
   initReveal();
@@ -511,6 +513,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
   initCopyInstaller();
   initTerminalTabs();
-  initTheme();
   setYear();
 });
